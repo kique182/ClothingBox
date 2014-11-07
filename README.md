@@ -18,21 +18,21 @@ Este sistema es desarrollado con la finalidad de satisfacer la necesidad de nues
 •	Compra de los productos por parte de los clientes registrados en el sistema.
 •	Mantener el registro y control, de los productos, usuarios y medios de pago y envíos.
 •	Registro y control de pedidos hechos por los usuarios.
-•	Visualización de reportes de ventas generales y específicos
+•	Visualización de reportes de ventas generales y específicos.
 
  Funcionalidad del producto
+ 
 El sistema debe permitir:
 •	Que los usuarios interesados en adquirir los productos de la tienda lo puedan hacer vía Online, registrándose en el sistema, seleccionando los productos disponibles y pudiendo escoger un método de pago y un medio de envío para recibir el producto.
 •	Que los usuarios encargados de la empresa puedan gestionar los pedidos y visualizar reportes de su interés.
 •	Que se pueda realizar el mantenimiento y gestión de usuarios, productos, pagos y envíos. 
 
- Suposiciones y dependencias
+ Suposiciones y dependencias:
 •	La empresa adquirirá el Dominio y el Servidor para el Alojamiento del Sitio Web. 
 •	La empresa contara con el equipo de hardware y de red para la implementación de la aplicación en las instalaciones de la misma.
 •	La aplicación de podrá ejecutar en cualquier navegador, desde una PC.
  
- Evolución previsible del sistema
+ Evolución previsible del sistema:
 •	Ampliación de Ventas Fuera del Territorio Nacional.
-•	Base de Datos Distribuidas
-•	Inteligencia de Negocios
+•	Inteligencia de Negocios.
 
