@@ -1,0 +1,90 @@
+#lista_menu ul, #lista_menu li, #lista_menu a {margin: 0;padding: 0;}
+#lista_menu
+{
+	height: 50px;	
+}
+
+#lista_menu ul
+{
+	list-style: none;
+	background-color: blue;
+}
+
+#lista_menu ul li
+{
+	float: left;
+}
+
+#lista_menu ul li a
+{
+	text-decoration: none;
+	margin-left: 10px;
+	margin-top: 10px;
+	height: 50px;
+}
+
+#caja_lista
+{
+	padding-top: 10px; 
+	height: 95%;
+	width: 95%;
+}
+
+#usuario_uno
+{
+	float: left;
+	margin-left: 80px;
+	height: 200px;
+	width: 200px;
+	/*border-radius: 5px;
+	box-shadow: 0 0 5px #000;*/
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
+	margin-top: 10px;
+}
+
+.nombre
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	float: left;
+}
+
+.check
+{
+	margin-right: 10px;
+	float: right;
+}
+
+.foto
+{
+	width: 150px;
+	height: 120px;
+	margin-left: 20px;
+	margin-top: 30px;
+	background-color: #e2e2e2;
+	border: 1px solid #000;
+}
+.botones
+{
+	width: 200px;
+	height: 50px;
+	margin-top: 20px;
+}
+
+a.boton
+{
+	color: #fff;
+	text-decoration: none;
+	border-radius: 5px;
+	border: 2px #0000FF solid;
+	margin-left: 20px;
+	margin-top: 200px;
+	padding: 5px 10px 5px 10px;
+	background-color: blue;
+}
+
+a.boton:hover
+{
+	background-color: #e3e3e3;
+	color: #000;
+}

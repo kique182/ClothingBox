@@ -1,0 +1,94 @@
+/* 
+    Document   : estilo_registro
+    Created on : 27/10/2014, 04:04:04 PM
+    Author     : Javier Moreno
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+.registro
+{
+    position: absolute;
+    border-radius: 10px;
+    background-color: #2b83f0;
+    box-shadow: 0 0 10px #000;
+    margin-top: 30px; 
+    margin-left: 220px;
+    width: 500px;
+    height: 470px;
+}
+
+.nombre
+{
+	float: left;
+	width: 170px;
+	height: 35px;
+}
+
+.apellido
+{
+	float: right;
+	width: 170px;
+	height: 35px;
+}
+
+.email
+{
+	float: left;
+	margin-top: 20px;
+	width: 425px;
+	height: 35px;
+}
+
+div.form
+{
+}
+
+div.form h1
+{
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    font-size: 40pt;
+    margin: 15px 0px;
+    font-family: agency_fb;
+}
+
+div.form input
+{
+    padding: 0px 10px;
+    margin: 10px 25px;
+    color: #262323;
+}
+
+div.form input.boton2
+{
+    width: 115px;
+    height: 40px;
+    background-color: #0f50a1;
+    border-radius: 5px;
+    margin-left: 80px;
+    margin-top: 15px;
+    color: #fff;
+}
+
+div.form input.boton2:hover
+{
+	background-color: #1772c5;
+}
+
+div.form div.error input,
+div.form input.error
+{
+	background: #FEE;
+	border-color: #C00;
+}
+
+div.form div.success input
+div.form input.success
+{
+	background: #E6EFC2;
+	border-color: #C6D880;
+}
+

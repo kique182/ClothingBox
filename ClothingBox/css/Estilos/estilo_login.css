@@ -1,0 +1,70 @@
+.sesion
+{
+    position: absolute;
+    border-radius: 10px;
+    background-color: #2b83f0;
+    box-shadow: 0 0 10px #000;
+    margin-top: 50px; 
+    margin-left: 300px;
+    width: 380px;
+    height: 300px;
+}
+
+.usuario
+{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 300px;
+    height: 35px;
+}
+
+div.form
+{
+}
+
+div.form h1
+{
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    font-size: 40pt;
+    margin: 15px 0px;
+    font-family: agency_fb;
+}
+
+div.form input
+{
+    padding: 0px 10px;
+    margin: 10px 50px;
+    color: #262323;
+}
+
+div.form input.boton
+{
+    width: 115px;
+    height: 40px;
+    background-color: #0f50a1;
+    border-radius: 5px;
+    margin-left: 40px;
+    color: #fff;
+}
+
+div.form input.boton:hover
+{
+	background-color: #1772c5;
+}
+
+div.form div.error input,
+div.form input.error
+{
+	background: #FEE;
+	border-color: #C00;
+}
+
+div.form div.success input
+div.form input.success
+{
+	background: #E6EFC2;
+	border-color: #C6D880;
+}

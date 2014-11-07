@@ -1,0 +1,110 @@
+@font-face
+{
+	font-family: agency_fb;
+	src: url(agency_fb.ttf);
+}
+
+*
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: helvetica;
+}
+
+body
+{
+	background-color: #fff;
+}
+
+/* Cabecera*/
+header
+{
+	margin: auto;
+	width: 1000px;
+	height: 160px;
+	background-color: #fff;
+}
+
+.logo
+{
+	float: left;
+	width: 400px;
+	height: 150px;
+}
+
+.logo p
+{
+    text-indent: -99999em;
+    overflow: hidden;
+}
+
+/* Contenido en General */
+
+.contenido
+{
+    margin: auto;
+    padding-top: 40px;
+    padding-left: 40px;
+    width: 960px;
+    height: 580px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Iniciar Sesion */
+
+
+/* Registro */
+
+.registo
+{
+	margin-top: 100px; 
+	margin-left: 200px;
+	width: 600px;
+	height: 400px;
+}
+
+.nombre
+{
+	float: left;
+	width: 200px;
+	height: 35px;
+}
+
+.apellido
+{
+	float: right;
+	width: 200px;
+	height: 35px;
+}
+
+.email
+{
+	float: left;
+	margin-top: 20px;
+	width: 400px;
+	height: 35px;
+}
+
+.password1
+{
+	float: left;
+	margin-top: 20px;
+	width: 200px;
+	height: 35px;
+}
+
+.password2
+{
+	float: right;
+	margin-top: 20px;
+	width: 200px;
+	height: 35px;
+}
+
+.guardar
+{
+	margin-top: 50px;
+	margin-left: 150px;
+}
+
+
