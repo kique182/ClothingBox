@@ -102,7 +102,7 @@ class SiteController extends Controller
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
 			{
-				$model1 = Yii::app()->db->createCommand('select id from Usuarios where username = "'.Yii::app()->user->id.'"')->queryScalar();
+				$model1 = Yii::app()->db->createCommand('select id from usuarios where username = "'.Yii::app()->user->id.'"')->queryScalar();
 				if(Yii::app()->authManager->checkAccess('Administrador',$model1))
 				{
 					$this->redirect(Yii::app()->user->returnUrl.'/administrador/index');
