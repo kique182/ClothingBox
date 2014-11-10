@@ -19,14 +19,24 @@ $this->pageTitle=Yii::app()->name . ' - Registrarse';
             )); ?>
 
             <h1>Registrarse</h1>
-            <?php echo $form->textField($model,'nombre', array('class'=>'nombre', 'placeholder'=>'Ingrese su Nombre')); ?>
-            <?php echo $form->textField($model,'apellido' , array('class'=>'apellido', 'placeholder'=>'Ingrese su Apellido')); ?>
-            <?php echo $form->textField($model,'email' , array('class'=>'email', 'placeholder'=>'Ingrese su Email')); ?>
-            <?php echo $form->textField($model,'username' , array('class'=>'nombre', 'placeholder'=>'Ingrese su Usuario')); ?>
-            <?php echo $form->passwordField($model,'password' , array('class'=>'email', 'placeholder'=>'Ingrese su Contraseña')); ?>
-            <?php echo $form->passwordField($model,'repetirpassword' , array('class'=>'email', 'placeholder'=>'Repita su Contraseña')); ?>
-            <?php echo CHtml::button('Atras', array('class'=>'boton2', 'submit'=>array('site/login'))) ; ?>
-            <?php echo CHtml::submitButton('Registrar', array('class'=>'boton2')) ; ?>
+            <div class="campos_llenar">
+                <?php echo $form->textField($model,'nombre', array('class'=>'nombre', 'placeholder'=>'Ingrese su Nombre')); ?>
+                <?php echo $form->textField($model,'apellido' , array('class'=>'apellido', 'placeholder'=>'Ingrese su Apellido')); ?>
+            </div>
+            <div class="campos_llenar">
+                <?php echo $form->textField($model,'email' , array('class'=>'email', 'placeholder'=>'Ingrese su Email')); ?>
+            </div>
+            <div class="campos_llenar">
+                <?php echo $form->textField($model,'username' , array('class'=>'nombre', 'placeholder'=>'Ingrese su Usuario')); ?>
+            </div>
+            <div class="campos_llenar">
+                <?php echo $form->passwordField($model,'password' , array('class'=>'email', 'placeholder'=>'Ingrese su Contraseña')); ?>
+            </div>
+            <div class="campos_llenar">
+                <?php echo $form->passwordField($model,'repetirpassword' , array('class'=>'email', 'placeholder'=>'Repita su Contraseña')); ?>
+            </div>
+            <?php echo CHtml::link('Atras', array('site/login'), array('id'=>'boton_lindo', 'class'=>'registrar')); ?>
+            <?php echo CHtml::submitButton('Registrar', array('id'=>'boton_lindo', 'class'=>'registrar')) ; ?>
             <?php $this->endWidget(); ?>
         </div>
     </div>

@@ -62,22 +62,6 @@ div.form input
     color: #262323;
 }
 
-div.form input.boton2
-{
-    width: 115px;
-    height: 40px;
-    background-color: #0f50a1;
-    border-radius: 5px;
-    margin-left: 80px;
-    margin-top: 15px;
-    color: #fff;
-}
-
-div.form input.boton2:hover
-{
-	background-color: #1772c5;
-}
-
 div.form div.error input,
 div.form input.error
 {

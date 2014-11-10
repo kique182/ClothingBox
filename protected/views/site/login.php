@@ -17,10 +17,16 @@ $this->pageTitle=Yii::app()->name . ' - Iniciar Sesión';
             )); ?>
 
             <h1>Iniciar Sesión</h1>
-            <?php echo $form->textField($model,'username', array('class'=>'usuario', 'placeholder'=>'Ingrese su Email')); ?>
-            <?php echo $form->passwordField($model,'password' , array('class'=>'usuario', 'placeholder'=>'Ingrese su Contraseña')); ?>    
-            <?php echo CHtml::button('Registrar', array('class'=>'boton', 'submit'=>array('site/registro'))) ; ?>
-            <?php echo CHtml::submitButton('Ingresar', array('class'=>'boton')) ; ?>
+            <div class="campos_llenar">
+                <?php echo $form->textField($model,'username', array('class'=>'usuario', 'placeholder'=>'Ingrese su Email')); ?>
+            </div>
+            <div class="campos_llenar">
+                <?php echo $form->passwordField($model,'password' , array('class'=>'usuario', 'placeholder'=>'Ingrese su Contraseña')); ?>
+            </div>                
+            <div class="botones">
+                <?php echo CHtml::link('Registrar', array('site/registro'), array('id'=>'boton_lindo', 'class'=>'iniciar')); ?>
+                <?php echo CHtml::submitButton('Ingresar', array('id'=>'boton_lindo', 'class'=>'iniciar')) ; ?>
+            </div>
             <?php $this->endWidget(); ?>
         </div>
     </div>

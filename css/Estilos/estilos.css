@@ -50,61 +50,40 @@ header
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
 }
 
-/* Iniciar Sesion */
-
-
-/* Registro */
-
-.registo
+.campos_llenar
 {
-	margin-top: 100px; 
-	margin-left: 200px;
-	width: 600px;
-	height: 400px;
+    height: 60px;
+    width: 100%;
 }
 
-.nombre
-{
-	float: left;
-	width: 200px;
-	height: 35px;
+#boton_lindo
+{    
+    color: #fff;
+    border-radius: 3px;
+    padding: 10px 30px 10px 30px;
+    background-color: #0404B4;
+    font-family: agency_fb;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
 }
 
-.apellido
+#boton_lindo.registrar
 {
-	float: right;
-	width: 200px;
-	height: 35px;
+    margin-left: 100px;
 }
 
-.email
+#boton_lindo.iniciar
 {
-	float: left;
-	margin-top: 20px;
-	width: 400px;
-	height: 35px;
+    margin-left: 50px;
 }
 
-.password1
+#boton_lindo:hover
 {
-	float: left;
-	margin-top: 20px;
-	width: 200px;
-	height: 35px;
-}
-
-.password2
-{
-	float: right;
-	margin-top: 20px;
-	width: 200px;
-	height: 35px;
-}
-
-.guardar
-{
-	margin-top: 50px;
-	margin-left: 150px;
-}
+    background-color: blue;
+    color: #fff;
+    box-shadow: 0px 0px 5px 0px #000000;
+} 
 
 
