@@ -7,10 +7,10 @@
 	<div id="lista_menu">
 		<ul>
 			<li>
-				<?php echo CHtml::button('Crear', array('class'=>'boton2', 'submit'=>array('usuarios/create'))) ; ?>
+				<?php echo CHtml::button('Crear', array('class'=>'boton_peque', 'submit'=>array('usuarios/create'))) ; ?>
 			</li>
             <li>
-                <a href="">Eliminar</a>
+                <?php echo CHtml::button('Eliminar', array('class'=>'boton_peque', 'submit'=>array('#'))) ; ?>
             </li>
 		</ul>
 	</div> 

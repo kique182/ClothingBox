@@ -7,19 +7,17 @@
  */
 ?>
 
-<div id="usuario_uno">           
-	<div class="nombre">
-        <?php echo CHtml::encode($data->nombre); ?>
-        <?php echo CHtml::encode($data->apellido); ?>
-	</div>  
-    <div class="check">
-		<input type="checkbox" name="seleccion" value="1">
-	</div>
+<div id="usuario_uno">  
     <div class="foto">
             
     </div>
+    <div class="nombre">
+        <h3>
+            <?php echo CHtml::encode($data->username); ?>
+        </h3>
+    </div>  
     <div class="botones">            
-        <?php echo CHtml::link(CHtml::encode('editar'), array('update', 'id'=>$data->id)); ?>
-        <?php echo CHtml::link(CHtml::encode('eliminar'), array('delete', 'id'=>$data->id)); ?>
+        <?php echo CHtml::link(CHtml::encode('Editar'), array('update', 'id'=>$data->id), array('class'=>'boton_peque')); ?>
+        <?php echo CHtml::link(CHtml::encode('Eliminar'), array('delete', 'id'=>$data->id), array('class'=>'boton_peque')); ?>
     </div>
 </div>

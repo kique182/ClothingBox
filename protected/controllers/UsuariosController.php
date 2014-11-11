@@ -33,7 +33,7 @@ class UsuariosController extends Controller
 				'actions'=>array('create'),
 				'users'=>array('*'),
 			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+			/*array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('index','view','update','admin', 'delete'),
 				'users'=>array('@'),
 			),
@@ -42,7 +42,8 @@ class UsuariosController extends Controller
 				'users'=>array('admin'),
 			),*/
 			array('deny',  // deny all users
-				'users'=>array('*'),
+				'actions'=>array('index'),
+				'roles'=>array('Administrador'),
 			),
 		);
 	}
@@ -102,7 +103,7 @@ class UsuariosController extends Controller
 		{
 			$model->attributes=$_POST['Usuarios'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('index'));
 		}
 
 		$this->render('update',array(
