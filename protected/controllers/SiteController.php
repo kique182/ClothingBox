@@ -18,13 +18,13 @@ class SiteController extends Controller
 	{
 		
 		return array(
-			/*array('allow',  // allow all users to perform 'index' and 'view' actions
+			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('create'),
-				'roles'=>array('Usuario'),
+				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('index','view','update','admin', 'delete'),
-				'roles'=>array('Administrador'),
+				'users'=>array('@'),
 			),
 			/*array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
@@ -133,8 +133,8 @@ class SiteController extends Controller
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
 			{
-				$model1 = Yii::app()->db->createCommand('select id from usuarios where username = "'.Yii::app()->user->id.'"')->queryScalar();
-				if(Yii::app()->authManager->checkAccess('Administrador',$model1))
+				//$model1 = Yii::app()->db->createCommand('select id from usuarios where username = "'.Yii::app()->user->id.'"')->queryScalar();
+				if(Yii::app()->authManager->checkAccess('Administrador',Yii::app()->user->id))
 				{
 					$this->redirect(Yii::app()->user->returnUrl.'/administrador/index');
 				}
@@ -162,7 +162,7 @@ class SiteController extends Controller
         
     public function actionRegistro()
 	{
-        $model=new Usuarios;
+        $model = new Usuarios;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -171,7 +171,12 @@ class SiteController extends Controller
 		{
 			$model->attributes=$_POST['Usuarios'];
 			if($model->save())
+			{
+
+				$auth = Yii::app()->authManager;
+				$auth->assign('Usuario',$model->username);
 				$this->redirect(array('/usuarios/view','id'=>$model->id));
+			}
 		}
 
 		$this->render('registro',array(
