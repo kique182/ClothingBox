@@ -17,7 +17,7 @@
         </h3>
     </div>  
     <div class="botones">            
-        <?php echo CHtml::link(CHtml::encode('Editar'), array('update', 'id'=>$data->id), array('class'=>'boton_peque')); ?>
-        <?php echo CHtml::link(CHtml::encode('Eliminar'), array('delete', 'id'=>$data->id), array('class'=>'boton_peque')); ?>
+        <?php echo CHtml::link(CHtml::encode('Editar'), array('update', 'id'=>$data->idusuario), array('class'=>'boton_peque')); ?>
+        <?php echo CHtml::link(CHtml::encode('Eliminar'), array('delete', 'id'=>$data->idusuario), array('class'=>'boton_peque', 'confirm'=>'Seguro desea eliminar este Usuario.?')); ?>
     </div>
 </div>

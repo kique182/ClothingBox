@@ -1,15 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "usuarios".
+ * This is the model class for table "Usuarios".
  *
- * The followings are the available columns in table 'usuarios':
- * @property integer $id
+ * The followings are the available columns in table 'Usuarios':
+ * @property integer $idusuario
  * @property string $nombre
  * @property string $apellido
  * @property string $email
  * @property string $username
  * @property string $password
+ * @property string $telefono
+ * @property string $estado
+ * @property integer $Rol_idrol
+ * @property string $fecha_registro
+ *
+ * The followings are the available model relations:
+ * @property Pedido[] $pedidos
+ * @property Reclamo[] $reclamos
+ * @property Rol $rolIdrol
  */
 class Usuarios extends CActiveRecord
 {
@@ -19,7 +28,7 @@ class Usuarios extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'usuarios';
+		return 'Usuarios';
 	}
 
 	/**
@@ -30,30 +39,32 @@ class Usuarios extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, apellido, email, username, password, repetirpassword', 'required'),
-			array('nombre, apellido, username, password', 'length', 'max'=>50),
-			array('email', 'length', 'max'=>100),
+			array('nombre, apellido, email, username, password, repetirpassword, telefono', 'required'),
+			array('Rol_idrol', 'numerical', 'integerOnly'=>true),
+			array('nombre, apellido', 'length', 'max'=>80),
+			array('email, username, estado', 'length', 'max'=>50),
+			array('password', 'length', 'max'=>150),
+			array('telefono', 'length', 'max'=>25),
+			array('fecha_registro', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, apellido, email, username, password', 'safe', 'on'=>'search'),
+			array('idusuario, nombre, apellido, email, username, password, telefono, estado, Rol_idrol, fecha_registro', 'safe', 'on'=>'search'),
 
 			array(
-                'email',
-                'email',
-                'message' =>'el formato del email es malo',
-                ),
+				'email',
+				'email',
+				'message' =>'el formato del email es malo',
+			),
+			array(
+				'repetirpassword',
+				'compare',
+				'compareAttribute' => 'password',
+				'message' => 'La Clave no coincide'
+			),
 
-                array(
-                    'repetirpassword',
-                    'compare',
-                    'compareAttribute' => 'password',
-                    'message' => 'La Clave no coincide'
-                ),
-
-                array('username', 'unique', 'attributeName' => 'username', 'className' =>'Usuarios', 'allowEmpty' => false),
-                array('email', 'unique', 'attributeName' => 'email', 'className' =>'Usuarios', 'allowEmpty' => false),
+			array('username', 'unique', 'attributeName' => 'username', 'className' =>'Usuarios', 'allowEmpty' => false),
+			array('email', 'unique', 'attributeName' => 'email', 'className' =>'Usuarios', 'allowEmpty' => false),
 		);
-
 	}
 
 	/**
@@ -64,6 +75,9 @@ class Usuarios extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'pedidos' => array(self::HAS_MANY, 'Pedido', 'Usuario_idusuario'),
+			'reclamos' => array(self::HAS_MANY, 'Reclamo', 'Usuario_idusuario'),
+			'rolIdrol' => array(self::BELONGS_TO, 'Rol', 'Rol_idrol'),
 		);
 	}
 
@@ -73,12 +87,16 @@ class Usuarios extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'idusuario' => 'Idusuario',
 			'nombre' => 'Nombre',
 			'apellido' => 'Apellido',
 			'email' => 'Email',
 			'username' => 'Username',
 			'password' => 'Password',
+			'telefono' => 'Telefono',
+			'estado' => 'Estado',
+			'Rol_idrol' => 'Rol Idrol',
+			'fecha_registro' => 'Fecha Registro',
 		);
 	}
 
@@ -100,12 +118,16 @@ class Usuarios extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		$criteria->compare('idusuario',$this->idusuario);
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('apellido',$this->apellido,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
+		$criteria->compare('telefono',$this->telefono,true);
+		$criteria->compare('estado',$this->estado,true);
+		$criteria->compare('Rol_idrol',$this->Rol_idrol);
+		$criteria->compare('fecha_registro',$this->fecha_registro,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

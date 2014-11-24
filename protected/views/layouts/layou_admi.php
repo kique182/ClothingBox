@@ -50,10 +50,9 @@
                     'links'=>$this->breadcrumbs,
             )); ?><!-- breadcrumbs -->
         <?php endif?>
-    </header><!-- header -->
-
+        </header><!-- header -->
     <?php echo $content; ?>
-
+    
     <div class="clear"></div>
 
     <div id="footer">
@@ -64,3 +63,11 @@
 
 </body>
 </html>
+
+<?php
+    Yii::app()->clientScript->registerScript(
+        'myHideEffect',
+        '$("info").animate({opacity: 1.0}, 10000).slideUp("slow");',
+        CClientScript::POS_READY
+        );
+?>

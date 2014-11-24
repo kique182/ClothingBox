@@ -63,12 +63,12 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 
-		/*$auth = Yii::app()->authManager;
+               /* $auth = Yii::app()->authManager;
 		$auth->createRole('Administrador','Rol de Administrador');
-		$auth->assign('Administrador',2);
+		$auth->assign('Administrador','javio');
 
 		$auth->createRole('Usuario', 'Rol de Usuario');
-		$auth->assign('Usuario',3);*/
+		$auth->assign('Usuario','fernando');*/
 		$this->render('index');
 	}
 
@@ -170,13 +170,20 @@ class SiteController extends Controller
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
+			$model->estado = 'activo';
+			$model->Rol_idrol = 2;
+			$model->fecha_registro = new CDbExpression('NOW()');
+			$model->password = md5($model->password);
+			$model->repetirpassword = md5($model->repetirpassword);
 			if($model->save())
 			{
 
 				$auth = Yii::app()->authManager;
 				$auth->assign('Usuario',$model->username);
-				$this->redirect(array('/usuarios/view','id'=>$model->id));
+				Yii::app()->user->setFlash('success', 'Cuenta creada Satisfactoriamente..!!');
+				$this->redirect(array('login'));
 			}
+			Yii::app()->user->setFlash('error', 'Se ha producido un Error.!!');	
 		}
 
 		$this->render('registro',array(

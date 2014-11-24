@@ -46,7 +46,7 @@ return array(
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
-		),
+		),	
 		
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
@@ -55,7 +55,7 @@ return array(
 		
 		'db'=>array(
             'class' => 'CDbConnection',
-			'connectionString' => 'mysql:host=localhost;dbname=Prueba',
+			'connectionString' => 'mysql:host=localhost;dbname=Tienda',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => 'Javier19',

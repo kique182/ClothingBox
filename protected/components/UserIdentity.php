@@ -17,9 +17,10 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-		$conexion = Yii::app()->db;
+        $this->password = md5($this->password);
+ 		$conexion = Yii::app()->db;
         
-        $consulta = "SELECT username, password FROM usuarios ";
+        $consulta = "SELECT username, password FROM Usuarios ";
         $consulta .= "WHERE username='".$this->username."'";
         $consulta .= " AND password='".$this->password."'";
         

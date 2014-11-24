@@ -66,18 +66,22 @@ class UsuariosController extends Controller
 		$model=new Usuarios;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
+			$model->estado = 'activo';
+			$model->fecha_registro = new CDbExpression('NOW()');
 			if($model->save())
 			{
 				$auth = Yii::app()->authManager;
 				$auth->assign('Usuario',$model->username);
-				$this->redirect(array('view','id'=>$model->id));	
+				Yii::app()->user->setFlash('success', 'Registro Guardado Satisfactoriamente..!!');
+				$this->redirect(array('create'));	
 
-			}			
+			}		
+			Yii::app()->user->setFlash('error', 'Se ha producido un Error.!!');	
 		}
 
 		$this->render('create',array(

@@ -33,7 +33,7 @@ div.form h1
     font-family: agency_fb;
 }
 
-div.form input
+div.form input, div.form select
 {
     padding: 0px 10px;
     margin: 10px 50px;

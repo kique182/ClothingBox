@@ -6,6 +6,20 @@
 $this->pageTitle=Yii::app()->name . ' - Iniciar Sesión';
 ?>
 <div class="contenido">
+    <div class='info' style='text-align:center;'>
+            <?php
+                $flashMessages = Yii::app()->user->getFlashes();
+                if($flashMessages)
+                {
+                    echo '<ul class="flashes">';
+                    foreach ($flashMessages as $key => $message)
+                    {
+                        echo '<li><div class="flash-' . $key . '">' . $message . "</div></li>";
+                    }
+                    echo '</ul>';                
+                }
+            ?>
+        </div>
     <div class="sesion">
         <div class="form">
             <?php $form=$this->beginWidget('CActiveForm', array(
