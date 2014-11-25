@@ -7686,3 +7686,13 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/yii/ClothingBox/index.php/usuarios/25/site/images/Imagenes/icono.png
 ---
+2014/11/25 00:18:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in /srv/www/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /srv/www/htdocs/yii/framework/web/CController.php(270): CController->missingAction('images')
+#1 /srv/www/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /srv/www/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/Ima...')
+#3 /srv/www/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /srv/www/htdocs/yii/ClothingBox/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/Imagenes/icono.png
+---
