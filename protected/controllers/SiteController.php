@@ -142,8 +142,8 @@ class SiteController extends Controller
 				{
 					$this->redirect(Yii::app()->user->returnUrl.'/site/index');
 				}
-                //$this->redirect(Yii::app()->user->returnUrl);
 			}
+			Yii::app()->user->setFlash('error', 'Se ha producido un Error.!!');	
 				//
 		}
 		// display the login form
