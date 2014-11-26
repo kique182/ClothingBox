@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 25-11-2014 a las 22:54:03
+-- Tiempo de generación: 26-11-2014 a las 22:26:58
 -- Versión del servidor: 10.0.13-MariaDB
 -- Versión de PHP: 5.6.1
 
@@ -79,14 +79,22 @@ CREATE TABLE IF NOT EXISTS `auth_relacion` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Categoria`
+-- Estructura de tabla para la tabla `Categorias`
 --
 
-CREATE TABLE IF NOT EXISTS `Categoria` (
+CREATE TABLE IF NOT EXISTS `Categorias` (
 `idcategoria` int(11) NOT NULL,
   `nombre` varchar(60) NOT NULL,
   `descripcion` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `Categorias`
+--
+
+INSERT INTO `Categorias` (`idcategoria`, `nombre`, `descripcion`) VALUES
+(1, 'Damas', 'Ropa para damas'),
+(2, 'caballeros', 'Ropa para caballeros');
 
 -- --------------------------------------------------------
 
@@ -106,10 +114,18 @@ CREATE TABLE IF NOT EXISTS `Historial_Compras` (
 --
 
 CREATE TABLE IF NOT EXISTS `Inventario` (
-  `idInventario` int(11) NOT NULL,
+`idInventario` int(11) NOT NULL,
   `cantidad` int(11) DEFAULT NULL,
   `Producto_idproducto` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `Inventario`
+--
+
+INSERT INTO `Inventario` (`idInventario`, `cantidad`, `Producto_idproducto`) VALUES
+(2, 30, 1),
+(3, 10, 2);
 
 -- --------------------------------------------------------
 
@@ -121,7 +137,15 @@ CREATE TABLE IF NOT EXISTS `metodoenvio` (
 `idmetodoenvio` int(11) NOT NULL,
   `nombre` varchar(45) NOT NULL,
   `descripcion` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `metodoenvio`
+--
+
+INSERT INTO `metodoenvio` (`idmetodoenvio`, `nombre`, `descripcion`) VALUES
+(1, 'balija asegurada', 'viaja comodamente en carros blindados'),
+(2, 'balija sin asegurar', 'la mercancia que viaja de esta manera NO se encuentra asegurada');
 
 -- --------------------------------------------------------
 
@@ -133,7 +157,15 @@ CREATE TABLE IF NOT EXISTS `metodopago` (
 `idmetodopago` int(11) NOT NULL,
   `nombre` varchar(45) NOT NULL,
   `descripcion` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `metodopago`
+--
+
+INSERT INTO `metodopago` (`idmetodopago`, `nombre`, `descripcion`) VALUES
+(1, 'tarjetas de credito', 'aceptadas visa y mastercard'),
+(2, 'transferencia electronica', 'solo trabajamos con pocos bancos');
 
 -- --------------------------------------------------------
 
@@ -156,16 +188,27 @@ CREATE TABLE IF NOT EXISTS `Pedido` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Producto`
+-- Estructura de tabla para la tabla `Productos`
 --
 
-CREATE TABLE IF NOT EXISTS `Producto` (
+CREATE TABLE IF NOT EXISTS `Productos` (
 `idproducto` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `descripcion` varchar(150) NOT NULL,
-  `precio` decimal(3,0) NOT NULL,
+  `precio` double NOT NULL,
   `Categoria_idcategoria` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `Productos`
+--
+
+INSERT INTO `Productos` (`idproducto`, `nombre`, `descripcion`, `precio`, `Categoria_idcategoria`) VALUES
+(1, 'Chemisse', 'Algodon puro importado', 3000, 2),
+(2, 'Zapatos bonitos', 'los mas comodos del mercado', 12000, 1),
+(3, 'Pantalones', 'se usan para ponerse', 5000, 2),
+(4, 'blusa', 'de esas que se ponen', 2000, 1),
+(5, 'Botas', 'unas jodas muy caras', 10000, 2);
 
 -- --------------------------------------------------------
 
@@ -225,14 +268,14 @@ CREATE TABLE IF NOT EXISTS `Usuarios` (
 `idusuario` int(11) NOT NULL,
   `nombre` varchar(80) NOT NULL,
   `apellido` varchar(80) NOT NULL,
-  `email` varchar(50) NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(150) NOT NULL,
   `telefono` varchar(25) NOT NULL,
   `estado` varchar(50) NOT NULL,
   `Rol_idrol` int(11) NOT NULL,
   `fecha_registro` date DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `Usuarios`
@@ -242,7 +285,8 @@ INSERT INTO `Usuarios` (`idusuario`, `nombre`, `apellido`, `email`, `username`, 
 (2, 'Alexander', 'Moreno Urbina', 'alexandermoreno1@gmail.com', 'Alexander', 'c20ad4d76fe97759aa27a0c99bff6710', '04264567689', 'noactivo', 2, NULL),
 (9, 'Alexis Javier', 'Moreno Urbina', 'javiomoreno@gmail.com', 'javio', '2396d5f8cd3b89883d94a39c9e87158b', '04264567689', 'activo', 1, '2014-11-24'),
 (23, 'Maria Jose', 'Zambrano Escalante', 'majozaes@gmail.com', 'majo', '827ccb0eea8a706c4c34a16891f84e7b', '04264567689', 'activo', 3, '2014-11-24'),
-(27, 'g', 'g', 'petro@gmail.com', 'pedro', '202cb962ac59075b964b07152d234b70', '04264567689', 'activo', 2, '2014-11-24');
+(27, 'g', 'g', 'petro@gmail.com', 'pedro', '202cb962ac59075b964b07152d234b70', '04264567689', 'activo', 2, '2014-11-24'),
+(37, 'Fernando Enrique', 'Medina Andara', 'kique19834@gmail.com', 'nando', '12345', '04247193844', 'incativo', 2, '2014-11-25');
 
 --
 -- Índices para tablas volcadas
@@ -267,9 +311,9 @@ ALTER TABLE `auth_relacion`
  ADD PRIMARY KEY (`parent`,`child`), ADD KEY `child` (`child`);
 
 --
--- Indices de la tabla `Categoria`
+-- Indices de la tabla `Categorias`
 --
-ALTER TABLE `Categoria`
+ALTER TABLE `Categorias`
  ADD PRIMARY KEY (`idcategoria`);
 
 --
@@ -303,9 +347,9 @@ ALTER TABLE `Pedido`
  ADD PRIMARY KEY (`idpedido`), ADD KEY `fk_Pedido_Usuario1_idx` (`Usuario_idusuario`), ADD KEY `fk_Pedido_metodoenvio1_idx` (`metodoenvio_idmetodoenvio`), ADD KEY `fk_Pedido_metodopago1_idx` (`metodopago_idmetodopago`);
 
 --
--- Indices de la tabla `Producto`
+-- Indices de la tabla `Productos`
 --
-ALTER TABLE `Producto`
+ALTER TABLE `Productos`
  ADD PRIMARY KEY (`idproducto`), ADD KEY `fk_Producto_Categoria1_idx` (`Categoria_idcategoria`);
 
 --
@@ -337,30 +381,35 @@ ALTER TABLE `Usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `Categoria`
+-- AUTO_INCREMENT de la tabla `Categorias`
 --
-ALTER TABLE `Categoria`
-MODIFY `idcategoria` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `Categorias`
+MODIFY `idcategoria` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `Inventario`
+--
+ALTER TABLE `Inventario`
+MODIFY `idInventario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `metodoenvio`
 --
 ALTER TABLE `metodoenvio`
-MODIFY `idmetodoenvio` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `idmetodoenvio` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `metodopago`
 --
 ALTER TABLE `metodopago`
-MODIFY `idmetodopago` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `idmetodopago` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `Pedido`
 --
 ALTER TABLE `Pedido`
 MODIFY `idpedido` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `Producto`
+-- AUTO_INCREMENT de la tabla `Productos`
 --
-ALTER TABLE `Producto`
-MODIFY `idproducto` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `Productos`
+MODIFY `idproducto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `Rol`
 --
@@ -370,7 +419,7 @@ MODIFY `idrol` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT de la tabla `Usuarios`
 --
 ALTER TABLE `Usuarios`
-MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
+MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=38;
 --
 -- Restricciones para tablas volcadas
 --
@@ -398,7 +447,7 @@ ADD CONSTRAINT `fk_Historial_Compras_Pedido1` FOREIGN KEY (`Pedido_idpedido`) RE
 -- Filtros para la tabla `Inventario`
 --
 ALTER TABLE `Inventario`
-ADD CONSTRAINT `fk_Inventario_Producto1` FOREIGN KEY (`Producto_idproducto`) REFERENCES `Producto` (`idproducto`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ADD CONSTRAINT `fk_Inventario_Producto1` FOREIGN KEY (`Producto_idproducto`) REFERENCES `Productos` (`idproducto`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `Pedido`
@@ -409,17 +458,17 @@ ADD CONSTRAINT `fk_Pedido_metodopago1` FOREIGN KEY (`metodopago_idmetodopago`) R
 ADD CONSTRAINT `fk_Pedido_Usuario1` FOREIGN KEY (`Usuario_idusuario`) REFERENCES `Usuarios` (`idusuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `Producto`
+-- Filtros para la tabla `Productos`
 --
-ALTER TABLE `Producto`
-ADD CONSTRAINT `fk_Producto_Categoria1` FOREIGN KEY (`Categoria_idcategoria`) REFERENCES `Categoria` (`idcategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `Productos`
+ADD CONSTRAINT `fk_Producto_Categoria1` FOREIGN KEY (`Categoria_idcategoria`) REFERENCES `Categorias` (`idcategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `Producto_Pedido`
 --
 ALTER TABLE `Producto_Pedido`
 ADD CONSTRAINT `fk_Producto_Pedido_Pedido1` FOREIGN KEY (`Pedido_idpedido`) REFERENCES `Pedido` (`idpedido`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_Producto_Pedido_Producto1` FOREIGN KEY (`Producto_idproducto`) REFERENCES `Producto` (`idproducto`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ADD CONSTRAINT `fk_Producto_Pedido_Producto1` FOREIGN KEY (`Producto_idproducto`) REFERENCES `Productos` (`idproducto`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `Reclamo`
