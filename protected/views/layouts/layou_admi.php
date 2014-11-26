@@ -33,10 +33,15 @@
         <?php $this->widget('zii.widgets.CMenu',array(
                 'items'=>array(
                         array('label'=>'Inicio', 'url'=>array('/administrador/index')),
+                        array('label'=>'Pagos y Envios', 'url'=>array('#'),
+                            'items' => array(
+                            array('label' => 'Metodos de Pago', 'url' => '#'),
+                            array('label' => 'Metodos de Envio', 'url' => '#'))),
                         array('label'=>'Productos', 'url'=>array('#'),
                             'items' => array(
                             array('label' => 'Mujer', 'url' => '#'),
-                            array('label' => 'Hombre', 'url' => '#'))),
+                            array('label' => 'Hombre', 'url' => '#'),
+                            array('label' => 'Administrar Productos', 'url' => array('/productos/index')))),
                         array('label'=>'Usuarios', 'url'=>array('/usuarios/index'),
                             'items' => array(
                             array('label' => 'Crear Usuario', 'url' => array('/usuarios/create')),
