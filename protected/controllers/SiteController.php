@@ -143,7 +143,7 @@ class SiteController extends Controller
 					$this->redirect(Yii::app()->user->returnUrl.'/site/index');
 				}
 			}
-			Yii::app()->user->setFlash('error', 'Se ha producido un Error.!!');	
+			Yii::app()->user->setFlash('error', 'Usuario o Password Incorrecto.!!');	
 				//
 		}
 		// display the login form

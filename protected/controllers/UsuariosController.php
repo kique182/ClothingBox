@@ -105,7 +105,11 @@ class UsuariosController extends Controller
 		{
 			$model->attributes=$_POST['Usuarios'];
 			if($model->save())
-				$this->redirect(array('index'));
+			{
+				Yii::app()->user->setFlash('success', 'El Usuario ha sido modificado satisfactoriamente..!!');
+				$this->redirect(array('update', 'id'=>$model->idproducto));
+			}
+			Yii::app()->user->setFlash('error', 'Se ha producido un Error.!!');
 		}
 
 		$this->render('update',array(

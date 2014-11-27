@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_menu.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/usuarios_admin.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_registro.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_menu_lateral.css" />
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -33,10 +34,6 @@
         <?php $this->widget('zii.widgets.CMenu',array(
                 'items'=>array(
                         array('label'=>'Inicio', 'url'=>array('/administrador/index')),
-                        array('label'=>'Pagos y Envios', 'url'=>array('#'),
-                            'items' => array(
-                            array('label' => 'Metodos de Pago', 'url' => '#'),
-                            array('label' => 'Metodos de Envio', 'url' => '#'))),
                         array('label'=>'Productos', 'url'=>array('#'),
                             'items' => array(
                             array('label' => 'Mujer', 'url' => '#'),
@@ -56,8 +53,34 @@
             )); ?><!-- breadcrumbs -->
         <?php endif?>
         </header><!-- header -->
-    <?php echo $content; ?>
-    
+        <div class="contenido">    
+            <div class='info' style='text-align:center;'>
+                <?php
+                    $flashMessages = Yii::app()->user->getFlashes();
+                    if($flashMessages)
+                    {
+                        echo '<ul class="flashes">';
+                        foreach ($flashMessages as $key => $message)
+                        {
+                            echo '<li><div class="flash-' . $key . '">' . $message . "</div></li>";
+                        }
+                        echo '</ul>';                
+                    }
+                ?>
+            </div>
+            <div id="menu_lateral">
+                <?php $this->widget('zii.widgets.CMenu',array(
+                    'items'=>array(
+                    array('label'=>'Métodos de Pago', 'url'=>array('#')),
+                    array('label'=>'Métodos de Envio', 'url'=>array('#')),
+                    array('label'=>'Pedidos', 'url'=>array('#'), array('class'=>'last')))))
+                ?>
+            </div>
+            <div id="contenido_derecha">
+                <?php echo $content; ?>
+            </div>
+        </div>
+        
     <div class="clear"></div>
 
     <div id="footer">

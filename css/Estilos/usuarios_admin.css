@@ -1,13 +1,18 @@
 #lista_menu ul, #lista_menu li, #lista_menu a {margin: 0;padding: 0;}
 #lista_menu
 {
-	height: 50px;	
+	position: relative;
+	float: right;
+	height: 50px;
+	width: 100%;
+	padding-right: 20px;
+	padding-bottom: 30px;
 }
 
 #lista_menu ul
 {
+	float: right;
 	list-style: none;
-	background-color: blue;
 }
 
 #lista_menu ul li
@@ -33,7 +38,7 @@
 #usuario_uno
 {
 	float: left;
-	margin-left: 80px;
+	margin-left: 20px;
 	height: 235px;
 	width: 200px;
 	border-radius: 5px;

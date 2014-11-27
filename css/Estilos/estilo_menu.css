@@ -2,6 +2,7 @@
 #menu ul {list-style: none;}
 #menu a {text-decoration: none;}
 #menu {
+  display: block;
   float: right;
   margin-top: 110px;
   height: 40px;

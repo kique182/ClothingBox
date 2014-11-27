@@ -3,21 +3,18 @@
 /* @var $dataProvider CActiveDataProvider */
 
 ?>
-<div class="contenido">
-	<div id="lista_menu">
-		<ul>
-			<li>
-				<?php echo CHtml::button('Crear', array('class'=>'boton_peque', 'submit'=>array('productos/create'))) ; ?>
-			</li>
-            <li>
-                <?php echo CHtml::button('Eliminar', array('class'=>'boton_peque', 'submit'=>array('#'))) ; ?>
-            </li>
-		</ul>
-	</div> 
-    <div id="caja_lista">
-		<?php $this->widget('zii.widgets.CListView', array(
-			'dataProvider'=>$dataProvider,
-			'itemView'=>'/administrador/productos',
-		)); ?>
-	</div>
+<div id="lista_menu">
+	<h1>Productos</h1>
+	<ul>
+		<li>
+			<?php echo CHtml::button('Crear Producto', array('class'=>'boton_peque', 'submit'=>array('productos/create'))) ; ?>
+		</li>
+	</ul>
+</div> 
+<div id="caja_lista">
+	<?php $this->widget('zii.widgets.CListView', array(
+		'summaryText'=>'',
+		'dataProvider'=>$dataProvider,
+		'itemView'=>'/administrador/productos',
+	)); ?>
 </div>

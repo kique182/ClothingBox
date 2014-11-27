@@ -21,7 +21,7 @@ $this->pageTitle=Yii::app()->name . ' - Registrarse';
                 }
             ?>
         </div>
-    <div class="registro">
+    <div class="registro_afuera">
         <div class="form">
             <?php $form=$this->beginWidget('CActiveForm', array(
             'id'=>'usuarios-form',

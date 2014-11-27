@@ -5,6 +5,4 @@
  * and open the template in the editor.
  */
 ?>
-<div class="contenido">
-    <?php echo "hola";?>
-</div>
+<?php echo "hola";?>
