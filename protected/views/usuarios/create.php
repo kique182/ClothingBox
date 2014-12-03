@@ -1,17 +1,6 @@
 <?php
 /* @var $this UsuariosController */
 /* @var $model Usuarios */
-
-/*foreach (Yii::app()->user->getFlashes() as $key => $message)
-    {
-        echo 'div class="flash-' . $key . '">' . $message . "</div>";
-    }
-*/
-    /*if(Yii::app()->user->hasFlash('success')):?>
-    <div class="info">
-        <?php echo Yii::app()->user->getFlash('success'); ?>
-    </div>
-    <?php endif;*/
 ?>
 
 <div class='info' style='text-align:center;'>
