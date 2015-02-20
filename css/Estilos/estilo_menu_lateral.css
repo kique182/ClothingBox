@@ -104,7 +104,9 @@
   color: #fefefe;
 }
 #menu_lateral > ul > li.active a {
-  background: #1b9bff;
+  background: #0F68CC;
+  color: #fefefe;
+  font-weight: bold;
 }
 #menu_lateral > ul > li a:hover,
 #menu_lateral > ul > li:hover a {

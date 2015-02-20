@@ -28,7 +28,7 @@
             }
         ?>
     </div>
-<div class="modificar_crear">
+<div class="registro">
     <div class="form">
         <?php $form=$this->beginWidget('CActiveForm', array(
         'id'=>'productos-form',

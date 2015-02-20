@@ -36,8 +36,7 @@
                         array('label'=>'Inicio', 'url'=>array('/administrador/index')),
                         array('label'=>'Productos', 'url'=>array('#'),
                             'items' => array(
-                            array('label' => 'Mujer', 'url' => '#'),
-                            array('label' => 'Hombre', 'url' => '#'),
+                            array('label' => 'Administrar Categorias', 'url' => array('/categorias/index')),
                             array('label' => 'Administrar Productos', 'url' => array('/productos/index')))),
                         array('label'=>'Usuarios', 'url'=>array('/usuarios/index'),
                             'items' => array(
@@ -72,7 +71,7 @@
                 <?php $this->widget('zii.widgets.CMenu',array(
                     'items'=>array(
                     array('label'=>'Métodos de Pago', 'url'=>array('#')),
-                    array('label'=>'Métodos de Envio', 'url'=>array('#')),
+                    array('label'=>'Métodos de Envio', 'url'=>array('/metodoenvio/index')),
                     array('label'=>'Pedidos', 'url'=>array('#'), array('class'=>'last')))))
                 ?>
             </div>

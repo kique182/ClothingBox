@@ -42,7 +42,7 @@
                         array('label'=>'Iniciar Sesión', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
                         array('label'=>Yii::app()->user->name, 'url'=>array('#'), 
                             'items' => array(
-                            array('label' => 'Perfil', 'url' => '#'),
+                            array('label' => 'Perfil', 'url' => array('perfil')),
                             array('label' => 'Salir', 'url'=>array('/site/logout'))),'visible'=>!Yii::app()->user->isGuest)
                 ),
         )); ?>

@@ -71,8 +71,9 @@ class UsuariosController extends Controller
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
-			$model->estado = 'activo';
+			$model->Estado_idestado = 'activo';
 			$model->fecha_registro = new CDbExpression('NOW()');
+			$model->repetirpassword = $model->password;
 			if($model->save())
 			{
 				$auth = Yii::app()->authManager;
@@ -104,10 +105,11 @@ class UsuariosController extends Controller
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
+			$model->repetirpassword = $model->password;
 			if($model->save())
 			{
 				Yii::app()->user->setFlash('success', 'El Usuario ha sido modificado satisfactoriamente..!!');
-				$this->redirect(array('update', 'id'=>$model->idproducto));
+				$this->redirect(array('update', 'id'=>$model->idusuario));
 			}
 			Yii::app()->user->setFlash('error', 'Se ha producido un Error.!!');
 		}

@@ -7,7 +7,7 @@
 	<h1>Usuarios</h1>
 	<ul>
 		<li>
-			<?php echo CHtml::button('Crear Usuario', array('class'=>'boton_peque', 'submit'=>array('productos/create'))) ; ?>
+			<?php echo CHtml::button('Crear Usuario', array('class'=>'boton_peque', 'submit'=>array('usuarios/create'))) ; ?>
 		</li>
 	</ul>
 </div> 

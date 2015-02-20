@@ -38,7 +38,7 @@ $this->pageTitle=Yii::app()->name . ' - Iniciar Sesión';
                 <?php echo $form->passwordField($model,'password' , array('class'=>'usuario', 'placeholder'=>'Ingrese su Contraseña')); ?>
             </div>                
             <div class="botones">
-                <?php echo CHtml::link('Registrar', array('site/registro'), array('id'=>'boton_lindo', 'class'=>'iniciar')); ?>
+                <?php echo CHtml::link('Registro', array('site/registro'), array('id'=>'boton_lindo', 'class'=>'iniciar')); ?>
                 <?php echo CHtml::submitButton('Ingresar', array('id'=>'boton_lindo', 'class'=>'iniciar')) ; ?>
             </div>
             <?php $this->endWidget(); ?>
