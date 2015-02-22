@@ -21,6 +21,7 @@
 class Usuarios extends CActiveRecord
 {
 	var $repetirpassword;
+	public $picture;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -37,7 +38,7 @@ class Usuarios extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, apellido, cedula, direccion, telefono, fecha_nacimiento, username, password, Sexo_idsexo, Estado_idestado, Rol_idrol', 'required'),
+			array('nombre, apellido, cedula, direccion, telefono, fecha_nacimiento, username, password, repetirpassword, email, Sexo_idsexo, Estado_idestado, Rol_idrol', 'required'),
 			array('Rol_idrol', 'numerical', 'integerOnly'=>true),
 			array('nombre, apellido', 'length', 'max'=>80),
 			array('cedula, email, username, Sexo_idsexo, Estado_idestado', 'length', 'max'=>50),
@@ -52,13 +53,12 @@ class Usuarios extends CActiveRecord
 			array(
 				'email',
 				'email',
-				'message' =>'El formato del email es malo',
 			),
 			array(
 				'repetirpassword',
 				'compare',
 				'compareAttribute' => 'password',
-				'message' => 'La Clave no coincide'
+				'message' => 'Las Claves no coincide'
 			),
 
 			array(
@@ -66,10 +66,16 @@ class Usuarios extends CActiveRecord
 				'unique', 
 				'attributeName' => 'username', 
 				'className' =>'Usuarios', 
-				'allowEmpty' => false,
-				'message' => 'Usuario ya registrado'
+				'allowEmpty' => false
 			),
-			array('email', 'unique', 'attributeName' => 'email', 'className' =>'Usuarios', 'allowEmpty' => false),
+			array(
+				'email',
+				'unique',
+				'attributeName' => 'email',
+				'className' =>'Usuarios',
+				'allowEmpty' => false
+			),
+
 		);
 	}
 
@@ -96,14 +102,15 @@ class Usuarios extends CActiveRecord
 			'cedula' => 'Cedula',
 			'direccion' => 'Direccion',
 			'telefono' => 'Telefono',
-			'fecha_nacimiento' => 'Fecha Nacimiento',
+			'fecha_nacimiento' => 'Fecha de Nacimiento',
 			'email' => 'Email',
-			'username' => 'Username',
-			'password' => 'Password',
-			'Sexo_idsexo' => 'Sexo Idsexo',
+			'username' => 'Usuario',
+			'password' => 'Contraseña',
+			'Sexo_idsexo' => 'Sexo',
 			'Estado_idestado' => 'Estado Idestado',
 			'Rol_idrol' => 'Rol Idrol',
 			'fecha_registro' => 'Fecha Registro',
+			'repetirpassword' => 'Repetir Contraseña',
 		);
 	}
 

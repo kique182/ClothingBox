@@ -173,8 +173,7 @@ class SiteController extends Controller
 			$model->Estado_idestado = 'activo';
 			$model->Rol_idrol = 2;
 			$model->fecha_registro = new CDbExpression('NOW()');
-			$model->password = md5($model->password);
-			$model->repetirpassword = md5($model->repetirpassword);
+			
 			if($model->save())
 			{
 				$auth = Yii::app()->authManager;
@@ -182,7 +181,7 @@ class SiteController extends Controller
 				Yii::app()->user->setFlash('success', 'Usuario Creado Satisfactoriamente.');
 				$this->redirect(array('login'));
 			}
-			Yii::app()->user->setFlash('error', 'Se ha producido un error');	
+			Yii::app()->user->setFlash('error', CHtml::errorSummary($model));	
 		}
 
 		$this->render('registro',array(
