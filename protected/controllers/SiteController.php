@@ -142,6 +142,10 @@ class SiteController extends Controller
 				{
 					$this->redirect(Yii::app()->user->returnUrl.'/cliente/index');
 				}
+				else if(Yii::app()->authManager->checkAccess('Usuario',Yii::app()->user->id))
+				{
+					$this->redirect(Yii::app()->user->returnUrl.'/usuarios/index');
+				}
 			}
 			Yii::app()->user->setFlash('error', 'Usuario o Password Incorrecto.!!');	
 				//
@@ -170,6 +174,13 @@ class SiteController extends Controller
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
+			$var1 = $model->password;
+			$var2 = $model->repetirpassword;
+			if($model->password != '' && $model->repetirpassword != '')
+			{
+				$model->password = md5($model->password);
+				$model->repetirpassword = md5($model->repetirpassword);
+			}
 			$model->Estado_idestado = 'activo';
 			$model->Rol_idrol = 2;
 			$model->fecha_registro = new CDbExpression('NOW()');
@@ -177,10 +188,12 @@ class SiteController extends Controller
 			if($model->save())
 			{
 				$auth = Yii::app()->authManager;
-				$auth->assign('Usuario',$model->username);
+				$auth->assign('Cliente',$model->username);
 				Yii::app()->user->setFlash('success', 'Usuario Creado Satisfactoriamente.');
 				$this->redirect(array('login'));
 			}
+			$model->password = $var1;
+			$model->repetirpassword = $var2;
 			Yii::app()->user->setFlash('error', CHtml::errorSummary($model));	
 		}
 

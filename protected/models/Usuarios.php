@@ -58,7 +58,7 @@ class Usuarios extends CActiveRecord
 				'repetirpassword',
 				'compare',
 				'compareAttribute' => 'password',
-				'message' => 'Las Claves no coincide'
+				'message' => 'Las Contraseñas no coincide'
 			),
 
 			array(
