@@ -40,7 +40,7 @@
         )); ?>
 
         <h1>Crear Producto</h1>   
-        <div class="campos_llenar align="center" ">
+        <div class="campos_llenar" aling="center">
         <?php 
             echo $form->dropDownList($model,'Categoria_idcategoria', CHtml::listData(Categorias::model()->findAll(), 'idcategoria', 'nombre'), array('class'=>'rol'));?>
         </div>

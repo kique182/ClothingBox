@@ -42,7 +42,7 @@
             <?php echo $form->textField($model,'username' , array('class'=>'nombre', 'placeholder'=>'Ingrese su Usuario', 'disabled'=>'disabled'), array('size'=>20,'maxlength'=>20)); ?>
         </div>
         -->
-        <div class="campos_llenar align="center" ">
+        <div class="campos_llenar" align="center">
         <?php 
             echo $form->dropDownList($model,'Rol_idrol', CHtml::listData(Rol::model()->findAll(), 'idrol', 'nombre'), array('class'=>'rol'));?>
         </div>

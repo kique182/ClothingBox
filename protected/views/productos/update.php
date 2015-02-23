@@ -1,17 +1,6 @@
 <?php
 /* @var $this UsuariosController */
 /* @var $model Usuarios */
-
-/*foreach (Yii::app()->user->getFlashes() as $key => $message)
-    {
-        echo 'div class="flash-' . $key . '">' . $message . "</div>";
-    }
-*/
-    /*if(Yii::app()->user->hasFlash('success')):?>
-    <div class="info">
-        <?php echo Yii::app()->user->getFlash('success'); ?>
-    </div>
-    <?php endif;*/
 ?>
 
 <div class='info' style='text-align:center;'>
@@ -40,7 +29,7 @@
         )); ?>
 
         <h1>Modificar Productos</h1>   
-        <div class="campos_llenar align="center" ">
+        <div class="campos_llenar" align="center"s>
         <?php 
             echo $form->dropDownList($model,'Categoria_idcategoria', CHtml::listData(Categorias::model()->findAll(), 'idcategoria', 'nombre'), array('class'=>'rol'));?>
         </div>
