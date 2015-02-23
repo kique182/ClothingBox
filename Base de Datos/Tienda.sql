@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 26-11-2014 a las 22:26:58
+-- Tiempo de generación: 23-02-2015 a las 22:07:02
 -- Versión del servidor: 10.0.13-MariaDB
 -- Versión de PHP: 5.6.1
 
@@ -38,10 +38,7 @@ CREATE TABLE IF NOT EXISTS `auth_asignacion` (
 --
 
 INSERT INTO `auth_asignacion` (`itemname`, `userid`, `bizrule`, `data`) VALUES
-('Administrador', 'javio', NULL, 'N;'),
-('Usuario', 'Alexander', NULL, 'N;'),
-('Usuario', 'majo', 'NULL', 'N;'),
-('Usuario', 'pedro', NULL, 'N;');
+('Administrador', 'javio', NULL, 'N;');
 
 -- --------------------------------------------------------
 
@@ -63,6 +60,7 @@ CREATE TABLE IF NOT EXISTS `auth_items` (
 
 INSERT INTO `auth_items` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
 ('Administrador', 2, 'Rol de Administrador', NULL, 'N;'),
+('Cliente', 2, 'Rol de los clientes', NULL, NULL),
 ('Usuario', 2, 'Rol de Usuario', NULL, 'N;');
 
 -- --------------------------------------------------------
@@ -94,7 +92,27 @@ CREATE TABLE IF NOT EXISTS `Categorias` (
 
 INSERT INTO `Categorias` (`idcategoria`, `nombre`, `descripcion`) VALUES
 (1, 'Damas', 'Ropa para damas'),
-(2, 'caballeros', 'Ropa para caballeros');
+(2, 'Caballeros', 'Ropa para caballeros');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `Estado`
+--
+
+CREATE TABLE IF NOT EXISTS `Estado` (
+`id_estado` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `descripcion` varchar(1000) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `Estado`
+--
+
+INSERT INTO `Estado` (`id_estado`, `nombre`, `descripcion`) VALUES
+(1, 'Activo', 'usuarios activo'),
+(2, 'Inactivo', 'usuario inactivo');
 
 -- --------------------------------------------------------
 
@@ -105,6 +123,19 @@ INSERT INTO `Categorias` (`idcategoria`, `nombre`, `descripcion`) VALUES
 CREATE TABLE IF NOT EXISTS `Historial_Compras` (
   `idHistorial_Compras` int(11) NOT NULL,
   `Pedido_idpedido` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `imagen_usuario`
+--
+
+CREATE TABLE IF NOT EXISTS `imagen_usuario` (
+`id` int(11) NOT NULL,
+  `binaryfile` blob,
+  `fileName` varchar(100) DEFAULT NULL,
+  `fileType` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -183,7 +214,16 @@ CREATE TABLE IF NOT EXISTS `Pedido` (
   `Usuario_idusuario` int(11) NOT NULL,
   `metodoenvio_idmetodoenvio` int(11) NOT NULL,
   `metodopago_idmetodopago` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `Pedido`
+--
+
+INSERT INTO `Pedido` (`idpedido`, `numero_pedido`, `fecha`, `cantidad`, `direccion`, `status`, `Usuario_idusuario`, `metodoenvio_idmetodoenvio`, `metodopago_idmetodopago`) VALUES
+(1, 1001, '2014-11-27', 13, 'san cristobal', 'en espera', 37, 1, 1),
+(2, 1001, '2014-11-27', 15, 'san cristobal', 'en espera', 37, 1, 1),
+(4, 1002, '2014-11-27', 15, 'san cristobal', 'en espera', 37, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -197,18 +237,19 @@ CREATE TABLE IF NOT EXISTS `Productos` (
   `descripcion` varchar(150) NOT NULL,
   `precio` double NOT NULL,
   `Categoria_idcategoria` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `Productos`
 --
 
 INSERT INTO `Productos` (`idproducto`, `nombre`, `descripcion`, `precio`, `Categoria_idcategoria`) VALUES
-(1, 'Chemisse', 'Algodon puro importado', 3000, 2),
+(1, 'Chemisse', 'Algodon puro importado', 300, 2),
 (2, 'Zapatos bonitos', 'los mas comodos del mercado', 12000, 1),
-(3, 'Pantalones', 'se usan para ponerse', 5000, 2),
+(3, 'Pantalones 2', 'se usan para ponerse', 5000, 2),
 (4, 'blusa', 'de esas que se ponen', 2000, 1),
-(5, 'Botas', 'unas jodas muy caras', 10000, 2);
+(5, 'Botas', 'unas jodas muy caras', 10000, 2),
+(6, 'Pantalones', 'se colocan', 20000, 1);
 
 -- --------------------------------------------------------
 
@@ -261,6 +302,27 @@ INSERT INTO `Rol` (`idrol`, `nombre`, `descripcion`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `Sexos`
+--
+
+CREATE TABLE IF NOT EXISTS `Sexos` (
+`id_sexo` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `descripcion` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `Sexos`
+--
+
+INSERT INTO `Sexos` (`id_sexo`, `nombre`, `descripcion`) VALUES
+(1, 'Femenino', 'Sexo de las Mujeres'),
+(2, 'Masculino', 'Sexo de los Hombres'),
+(3, 'Otro', 'Sexo de los otros');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `Usuarios`
 --
 
@@ -268,25 +330,32 @@ CREATE TABLE IF NOT EXISTS `Usuarios` (
 `idusuario` int(11) NOT NULL,
   `nombre` varchar(80) NOT NULL,
   `apellido` varchar(80) NOT NULL,
+  `cedula` varchar(50) NOT NULL,
+  `direccion` varchar(100) NOT NULL,
+  `telefono` varchar(25) NOT NULL,
+  `fecha_nacimiento` date NOT NULL,
   `email` varchar(50) DEFAULT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(150) NOT NULL,
-  `telefono` varchar(25) NOT NULL,
-  `estado` varchar(50) NOT NULL,
+  `Sexo_idsexo` int(11) NOT NULL,
+  `Estado_idestado` varchar(50) NOT NULL,
   `Rol_idrol` int(11) NOT NULL,
   `fecha_registro` date DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `Usuarios`
 --
 
-INSERT INTO `Usuarios` (`idusuario`, `nombre`, `apellido`, `email`, `username`, `password`, `telefono`, `estado`, `Rol_idrol`, `fecha_registro`) VALUES
-(2, 'Alexander', 'Moreno Urbina', 'alexandermoreno1@gmail.com', 'Alexander', 'c20ad4d76fe97759aa27a0c99bff6710', '04264567689', 'noactivo', 2, NULL),
-(9, 'Alexis Javier', 'Moreno Urbina', 'javiomoreno@gmail.com', 'javio', '2396d5f8cd3b89883d94a39c9e87158b', '04264567689', 'activo', 1, '2014-11-24'),
-(23, 'Maria Jose', 'Zambrano Escalante', 'majozaes@gmail.com', 'majo', '827ccb0eea8a706c4c34a16891f84e7b', '04264567689', 'activo', 3, '2014-11-24'),
-(27, 'g', 'g', 'petro@gmail.com', 'pedro', '202cb962ac59075b964b07152d234b70', '04264567689', 'activo', 2, '2014-11-24'),
-(37, 'Fernando Enrique', 'Medina Andara', 'kique19834@gmail.com', 'nando', '12345', '04247193844', 'incativo', 2, '2014-11-25');
+INSERT INTO `Usuarios` (`idusuario`, `nombre`, `apellido`, `cedula`, `direccion`, `telefono`, `fecha_nacimiento`, `email`, `username`, `password`, `Sexo_idsexo`, `Estado_idestado`, `Rol_idrol`, `fecha_registro`) VALUES
+(9, 'Alexis Javier', 'Moreno Urbina', '', '', '04264567689', '0000-00-00', 'javiomoreno@gmail.com', 'javio', '2396d5f8cd3b89883d94a39c9e87158b', 0, 'activo', 1, '2014-11-24'),
+(37, 'Fernando Enrique', 'Medina Andara', '', '', '04247193844', '0000-00-00', 'kique19834@gmail.com', 'nando', '12345', 0, 'incativo', 2, '2014-11-25'),
+(38, 'Petronilo', 'Zambrano Escalante', '', '', '04264567689', '0000-00-00', 'pedr2o@gmail.com', 'pedroq', 'c20ad4d76fe97759aa27a0c99bff6710', 0, 'activo', 2, '2014-12-05'),
+(39, 'Maria Jose', 'Zambrano Escalante', '12345678', 'La Florida', '04264567689', '1995-08-17', 'majozaes17@gmail.com', 'majo', '12345', 1, 'activo', 1, '2014-12-08'),
+(40, 'Juan Luis', 'Guerra', '13122352', 'Los Cuatro Cuarenta', '20491209420', '1974-12-23', 'juanluisguerra@gmail.com', 'juanluis', '502ff82f7f1f8218dd41201fe4353687', 3, 'activo', 2, '2014-12-08'),
+(41, 'Maria Jose', 'Zambrano Escalante', '13122352', 'La Florida', '04264567689', '1995-08-17', 'majozaes1@gmail.com', 'majozaes', 'majo', 1, 'activo', 2, '2015-02-22'),
+(43, 'Maria Jose', 'Zambrano Escalante', '12345678', 'La Florida', '04264567689', '1995-08-17', 'majozaes@gmail.com', 'majoza', 'majo', 1, 'activo', 2, '2015-02-22'),
+(53, 'Fernando', 'Medina', '12345678', 'Los Cuatro Cuarenta', '04264567689', '2015-02-09', 'fernando@gmail.com', 'fernando', '202cb962ac59075b964b07152d234b70', 1, 'activo', 2, '2015-02-22');
 
 --
 -- Índices para tablas volcadas
@@ -317,10 +386,22 @@ ALTER TABLE `Categorias`
  ADD PRIMARY KEY (`idcategoria`);
 
 --
+-- Indices de la tabla `Estado`
+--
+ALTER TABLE `Estado`
+ ADD PRIMARY KEY (`id_estado`);
+
+--
 -- Indices de la tabla `Historial_Compras`
 --
 ALTER TABLE `Historial_Compras`
  ADD PRIMARY KEY (`idHistorial_Compras`), ADD KEY `fk_Historial_Compras_Pedido1_idx` (`Pedido_idpedido`);
+
+--
+-- Indices de la tabla `imagen_usuario`
+--
+ALTER TABLE `imagen_usuario`
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `Inventario`
@@ -371,6 +452,12 @@ ALTER TABLE `Rol`
  ADD PRIMARY KEY (`idrol`);
 
 --
+-- Indices de la tabla `Sexos`
+--
+ALTER TABLE `Sexos`
+ ADD PRIMARY KEY (`id_sexo`);
+
+--
 -- Indices de la tabla `Usuarios`
 --
 ALTER TABLE `Usuarios`
@@ -385,6 +472,16 @@ ALTER TABLE `Usuarios`
 --
 ALTER TABLE `Categorias`
 MODIFY `idcategoria` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `Estado`
+--
+ALTER TABLE `Estado`
+MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `imagen_usuario`
+--
+ALTER TABLE `imagen_usuario`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `Inventario`
 --
@@ -404,22 +501,27 @@ MODIFY `idmetodopago` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT de la tabla `Pedido`
 --
 ALTER TABLE `Pedido`
-MODIFY `idpedido` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `idpedido` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `Productos`
 --
 ALTER TABLE `Productos`
-MODIFY `idproducto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `idproducto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `Rol`
 --
 ALTER TABLE `Rol`
 MODIFY `idrol` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT de la tabla `Sexos`
+--
+ALTER TABLE `Sexos`
+MODIFY `id_sexo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT de la tabla `Usuarios`
 --
 ALTER TABLE `Usuarios`
-MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=38;
+MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=54;
 --
 -- Restricciones para tablas volcadas
 --
