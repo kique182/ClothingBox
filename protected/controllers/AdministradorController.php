@@ -38,6 +38,10 @@ class AdministradorController extends Controller
     {
             $this->render('usuarios');
     }
+    public function actionCategorias()
+    {
+    		$this->render('categorias');
+    }
     
     
 }
