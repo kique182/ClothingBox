@@ -21,7 +21,6 @@
 class Usuarios extends CActiveRecord
 {
 	var $repetirpassword;
-	public $picture;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -41,6 +40,7 @@ class Usuarios extends CActiveRecord
 			array('nombre, apellido, cedula, direccion, telefono, fecha_nacimiento, username, password, repetirpassword, email, Sexo_idsexo, Estado_idestado, Rol_idrol', 'required'),
 			array('Rol_idrol', 'numerical', 'integerOnly'=>true),
 			array('nombre, apellido', 'length', 'max'=>80),
+			array('foto', 'length', 'max'=>50),
 			array('cedula, email, username, Sexo_idsexo, Estado_idestado', 'length', 'max'=>50),
 			array('direccion', 'length', 'max'=>100),
 			array('telefono', 'length', 'max'=>25),
@@ -48,7 +48,7 @@ class Usuarios extends CActiveRecord
 			array('fecha_registro', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('idusuario, nombre, apellido, cedula, direccion, telefono, fecha_nacimiento, email, username, password, Sexo_idsexo, Estado_idestado, Rol_idrol, fecha_registro', 'safe', 'on'=>'search'),
+			array('idusuario, nombre, apellido, cedula, direccion, telefono, fecha_nacimiento, email, username, password, Sexo_idsexo, Estado_idestado, Rol_idrol, fecha_registro, foto', 'safe', 'on'=>'search'),
 
 			array(
 				'email',
@@ -110,6 +110,7 @@ class Usuarios extends CActiveRecord
 			'Estado_idestado' => 'Estado Idestado',
 			'Rol_idrol' => 'Rol Idrol',
 			'fecha_registro' => 'Fecha Registro',
+			'foto' => 'Foto',
 			'repetirpassword' => 'Repetir Contraseña',
 		);
 	}
@@ -146,6 +147,7 @@ class Usuarios extends CActiveRecord
 		$criteria->compare('Estado_idestado',$this->Estado_idestado,true);
 		$criteria->compare('Rol_idrol',$this->Rol_idrol);
 		$criteria->compare('fecha_registro',$this->fecha_registro,true);
+		$criteria->compare('foto',$this->foto,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

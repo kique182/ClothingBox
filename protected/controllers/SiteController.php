@@ -184,7 +184,10 @@ class SiteController extends Controller
 			$model->Estado_idestado = 'activo';
 			$model->Rol_idrol = 2;
 			$model->fecha_registro = new CDbExpression('NOW()');
-			
+			if($model->Sexo_idsexo == 1)
+				$model->foto = "silueta.png";
+			else
+				$model->foto = "silueta.jpg";
 			if($model->save())
 			{
 				$auth = Yii::app()->authManager;
