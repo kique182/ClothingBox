@@ -7943,3 +7943,64 @@ Stack trace:
 REQUEST_URI=/yii/ClothingBox/index.php/usuarios/create
 HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/usuarios/index
 ---
+2015/02/23 17:46:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in /srv/www/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /srv/www/htdocs/yii/framework/web/CController.php(270): CController->missingAction('images')
+#1 /srv/www/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /srv/www/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/Ima...')
+#3 /srv/www/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /srv/www/htdocs/yii/ClothingBox/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/Imagenes/icono.png
+---
+2015/02/24 10:26:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in /srv/www/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /srv/www/htdocs/yii/framework/web/CController.php(270): CController->missingAction('images')
+#1 /srv/www/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /srv/www/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/Ima...')
+#3 /srv/www/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /srv/www/htdocs/yii/ClothingBox/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/Imagenes/icono.png
+---
+2015/02/24 10:42:09 [error] [php] require(): Filename cannot be empty (/srv/www/htdocs/yii/framework/web/CBaseController.php:130)
+Stack trace:
+#0 /srv/www/htdocs/yii/framework/zii/widgets/CListView.php(291): CategoriasController->renderFile()
+#1 /srv/www/htdocs/yii/framework/zii/widgets/CBaseListView.php(181): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 /srv/www/htdocs/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback()
+#4 /srv/www/htdocs/yii/framework/zii/widgets/CBaseListView.php(149): CListView->renderContent()
+#5 /srv/www/htdocs/yii/framework/web/CBaseController.php(181): CListView->run()
+#6 /srv/www/htdocs/yii/ClothingBox/protected/views/categorias/index.php(11): CategoriasController->widget()
+#7 /srv/www/htdocs/yii/framework/web/CBaseController.php(126): require()
+#8 /srv/www/htdocs/yii/framework/web/CBaseController.php(95): CategoriasController->renderInternal()
+#9 /srv/www/htdocs/yii/framework/web/CController.php(869): CategoriasController->renderFile()
+#10 /srv/www/htdocs/yii/framework/web/CController.php(782): CategoriasController->renderPartial()
+#11 /srv/www/htdocs/yii/ClothingBox/protected/controllers/CategoriasController.php(128): CategoriasController->render()
+#12 /srv/www/htdocs/yii/framework/web/actions/CInlineAction.php(49): CategoriasController->actionIndex()
+#13 /srv/www/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /srv/www/htdocs/yii/framework/web/filters/CFilterChain.php(133): CategoriasController->runAction()
+#15 /srv/www/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /srv/www/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#17 /srv/www/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CategoriasController->filterAccessControl()
+#18 /srv/www/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#19 /srv/www/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#20 /srv/www/htdocs/yii/framework/web/CController.php(265): CategoriasController->runActionWithFilters()
+#21 /srv/www/htdocs/yii/framework/web/CWebApplication.php(282): CategoriasController->run()
+#22 /srv/www/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#23 /srv/www/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /srv/www/htdocs/yii/ClothingBox/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/ClothingBox/index.php/categorias/index
+in /srv/www/htdocs/yii/ClothingBox/protected/views/categorias/index.php (11)
+in /srv/www/htdocs/yii/ClothingBox/protected/controllers/CategoriasController.php (128)
+in /srv/www/htdocs/yii/ClothingBox/index.php (13)
+2015/02/24 10:42:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in /srv/www/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /srv/www/htdocs/yii/framework/web/CController.php(270): CController->missingAction('images')
+#1 /srv/www/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /srv/www/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('categorias/imag...')
+#3 /srv/www/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /srv/www/htdocs/yii/ClothingBox/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/categorias/images/Imagenes/icono.png
+---

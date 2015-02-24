@@ -7,5 +7,5 @@
 <?php $this->widget('zii.widgets.CListView', array(
 	'summaryText'=>'',
 	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
+	'itemView'=>'/administrador/categorias',
 )); ?>
