@@ -17,6 +17,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilos.css" />
+
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/usuarios_admin.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_menu.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_login.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_registro.css" />
@@ -34,7 +36,7 @@
         <?php $this->widget('zii.widgets.CMenu',array(
                 'items'=>array(
                         array('label'=>'Inicio', 'url'=>array('/site/index')),
-                        array('label'=>'Productos', 'url'=>array('#'),
+                        array('label'=>'Productos', 'url'=>array('/site/productos'),
                             'items' => array(
                             array('label' => 'Mujer', 'url' => '#'),
                             array('label' => 'Hombre', 'url' => '#'))),
@@ -53,9 +55,9 @@
             )); ?><!-- breadcrumbs -->
         <?php endif?>
     </header><!-- header -->
-
-    <?php echo $content; ?>
-
+    <div class="contenido">
+        <?php echo $content; ?>
+    </div>
     <div class="clear"></div>
 
     <div id="footer">

@@ -181,7 +181,7 @@ class SiteController extends Controller
 				$model->password = md5($model->password);
 				$model->repetirpassword = md5($model->repetirpassword);
 			}
-			$model->Estado_idestado = 'activo';
+			$model->Estado_idestado = 1;
 			$model->Rol_idrol = 2;
 			$model->fecha_registro = new CDbExpression('NOW()');
 			if($model->Sexo_idsexo == 1)
@@ -208,5 +208,13 @@ class SiteController extends Controller
 	public function actionPerfil()
 	{
 		$this->render('perfil');
+	}
+
+	public function actionProductos()
+	{
+		$dataProvider = new CActiveDataProvider('Productos');
+		$this->render('productos',array(
+			'dataProvider'=>$dataProvider,
+		));
 	}
 }

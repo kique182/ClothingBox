@@ -71,7 +71,7 @@ class UsuariosController extends Controller
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
-			$model->Estado_idestado = 'activo';
+			$model->Estado_idestado = 1;
 			$model->fecha_registro = new CDbExpression('NOW()');
 			$model->repetirpassword = $model->password;
 			if($model->save())
@@ -126,15 +126,15 @@ class UsuariosController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model = $this->loadModel($id);
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-		{
-			$dataProvider=new CActiveDataProvider('Usuarios');
-			$this->render('index',array(
-			'dataProvider'=>$dataProvider,));
-		}
+		$model->Estado_idestado = 2;
+		$model->update();
+		$dataProvider=new CActiveDataProvider('Usuarios');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
 			
 	}
 

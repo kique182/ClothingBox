@@ -6,7 +6,7 @@
 $this->pageTitle=Yii::app()->name . ' - Registrarse';
 ?>
 
-<div class="contenido">    
+  
     <div class='info' style='text-align:center;'>
             <?php
                 $flashMessages = Yii::app()->user->getFlashes();
@@ -86,4 +86,3 @@ $this->pageTitle=Yii::app()->name . ' - Registrarse';
             <?php $this->endWidget(); ?>
         </div>
     </div>
-</div>
