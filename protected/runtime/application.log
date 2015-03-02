@@ -9707,3 +9707,423 @@ Stack trace:
 #11 {main}
 REQUEST_URI=/yii/ClothingBox/index.php/clientes/productos/administrador/images/Imagenes/icono.png
 ---
+2015/03/02 15:54:14 [error] [exception.CException] exception 'CException' with message 'La propiedad "itemView" no puede estar vacia.' in C:\wamp\www\yii\framework\zii\widgets\CListView.php:210
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CBaseController.php(147): CListView->init()
+#1 C:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#2 C:\wamp\www\yii\ClothingBox\protected\views\clientes\detalle_producto.php(46): CBaseController->widget('zii.widgets.CLi...', Array)
+#3 C:\wamp\www\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#4 C:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#5 C:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#6 C:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('detalle_product...', Array, true)
+#7 C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php(53): CController->render('detalle_product...', Array)
+#8 [internal function]: ClientesController->actionDetalle_producto('2')
+#9 C:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ClientesController), Array)
+#10 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ClientesController), Object(ReflectionMethod), Array)
+#11 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('detalle_product...')
+#20 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/detall...')
+#21 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/detalle_producto/2
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/clientes/productos
+---
+2015/03/02 15:54:41 [error] [php] require(): Filename cannot be empty (C:\wamp\www\yii\framework\web\CBaseController.php:130)
+Stack trace:
+#0 C:\wamp\www\yii\framework\zii\widgets\CListView.php(291): ClientesController->renderFile()
+#1 C:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(167): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 C:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback()
+#4 C:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(135): CListView->renderContent()
+#5 C:\wamp\www\yii\framework\web\CBaseController.php(173): CListView->run()
+#6 C:\wamp\www\yii\ClothingBox\protected\views\clientes\detalle_producto.php(47): ClientesController->widget()
+#7 C:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#8 C:\wamp\www\yii\framework\web\CBaseController.php(95): ClientesController->renderInternal()
+#9 C:\wamp\www\yii\framework\web\CController.php(869): ClientesController->renderFile()
+#10 C:\wamp\www\yii\framework\web\CController.php(782): ClientesController->renderPartial()
+#11 C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php(53): ClientesController->render()
+#12 unknown(0): ClientesController->actionDetalle_producto()
+#13 C:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#14 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#15 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ClientesController->runAction()
+#17 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#19 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ClientesController->filterAccessControl()
+#20 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#21 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\wamp\www\yii\framework\web\CController.php(265): ClientesController->runActionWithFilters()
+#23 C:\wamp\www\yii\framework\web\CWebApplication.php(282): ClientesController->run()
+#24 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#25 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\wamp\www\yii\ClothingBox\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/detalle_producto/2
+in C:\wamp\www\yii\ClothingBox\protected\views\clientes\detalle_producto.php (47)
+in C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php (53)
+in C:\wamp\www\yii\ClothingBox\index.php (13)
+2015/03/02 15:55:28 [error] [php] require(): Filename cannot be empty (C:\wamp\www\yii\framework\web\CBaseController.php:130)
+Stack trace:
+#0 C:\wamp\www\yii\framework\zii\widgets\CListView.php(291): ClientesController->renderFile()
+#1 C:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(167): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 C:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback()
+#4 C:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(135): CListView->renderContent()
+#5 C:\wamp\www\yii\framework\web\CBaseController.php(173): CListView->run()
+#6 C:\wamp\www\yii\ClothingBox\protected\views\clientes\detalle_producto.php(47): ClientesController->widget()
+#7 C:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#8 C:\wamp\www\yii\framework\web\CBaseController.php(95): ClientesController->renderInternal()
+#9 C:\wamp\www\yii\framework\web\CController.php(869): ClientesController->renderFile()
+#10 C:\wamp\www\yii\framework\web\CController.php(782): ClientesController->renderPartial()
+#11 C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php(53): ClientesController->render()
+#12 unknown(0): ClientesController->actionDetalle_producto()
+#13 C:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#14 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#15 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ClientesController->runAction()
+#17 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#19 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ClientesController->filterAccessControl()
+#20 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#21 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\wamp\www\yii\framework\web\CController.php(265): ClientesController->runActionWithFilters()
+#23 C:\wamp\www\yii\framework\web\CWebApplication.php(282): ClientesController->run()
+#24 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#25 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\wamp\www\yii\ClothingBox\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/detalle_producto/2
+in C:\wamp\www\yii\ClothingBox\protected\views\clientes\detalle_producto.php (47)
+in C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php (53)
+in C:\wamp\www\yii\ClothingBox\index.php (13)
+2015/03/02 16:00:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/Ima...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/Imagenes/icono.png
+---
+2015/03/02 16:00:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/Ima...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/Imagenes/icono.png
+---
+2015/03/02 16:01:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/images...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/images/Imagenes/icono.png
+---
+2015/03/02 16:01:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/images...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/images/Imagenes/icono.png
+---
+2015/03/02 16:01:20 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('detalle_product...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/detall...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/detalle_producto/images/Imagenes/icono.png
+---
+2015/03/02 16:01:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/Ima...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/Imagenes/icono.png
+---
+2015/03/02 16:01:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/images...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/images/Imagenes/icono.png
+---
+2015/03/02 16:01:45 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('detalle_product...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/detall...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/detalle_producto/images/Imagenes/icono.png
+---
+2015/03/02 16:02:18 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('detalle_product...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/detall...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/detalle_producto/images/Imagenes/icono.png
+---
+2015/03/02 16:09:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php:60
+Stack trace:
+#0 C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php(39): ClientesController->loadModel('enedina')
+#1 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ClientesController->actionPerfil()
+#2 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('perfil')
+#11 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/perfil')
+#12 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/perfil
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/clientes/detalle_producto/2
+---
+2015/03/02 16:10:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php:68
+Stack trace:
+#0 C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php(39): ClientesController->loadModelCliente('enedina')
+#1 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ClientesController->actionPerfil()
+#2 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('perfil')
+#11 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/perfil')
+#12 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/perfil
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/clientes/detalle_producto/2
+---
+2015/03/02 16:12:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.enedina' in C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php:68
+Stack trace:
+#0 C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php(39): ClientesController->loadModelCliente('enedina')
+#1 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ClientesController->actionPerfil()
+#2 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('perfil')
+#11 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/perfil')
+#12 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/perfil
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/clientes/detalle_producto/2
+---
+2015/03/02 16:14:16 [error] [system.db.CDbCommand] CDbCommand::fetch() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'enedina' in 'where clause'. La sentencia SQL ejecutada fue: SELECT * FROM `Usuarios` `t` WHERE username=enedina LIMIT 1.
+in C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php (66)
+in C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php (39)
+in C:\wamp\www\yii\ClothingBox\index.php (13)
+2015/03/02 16:14:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'enedina' in 'where clause'. The SQL statement executed was: SELECT * FROM `Usuarios` `t` WHERE username=enedina LIMIT 1' in C:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php(66): CActiveRecord->find('username=enedin...')
+#4 C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php(39): ClientesController->loadModelCliente('enedina')
+#5 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ClientesController->actionPerfil()
+#6 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('perfil')
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/perfil')
+#16 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/perfil
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/clientes/detalle_producto/2
+---
+2015/03/02 16:15:04 [error] [php] Undefined variable: dataProvider (C:\wamp\www\yii\ClothingBox\protected\views\clientes\perfil.php:12)
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(869): ClientesController->renderFile()
+#1 C:\wamp\www\yii\framework\web\CController.php(782): ClientesController->renderPartial()
+#2 C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php(39): ClientesController->render()
+#3 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ClientesController->actionPerfil()
+#4 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ClientesController->runAction()
+#6 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ClientesController->filterAccessControl()
+#9 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp\www\yii\framework\web\CController.php(265): ClientesController->runActionWithFilters()
+#12 C:\wamp\www\yii\framework\web\CWebApplication.php(282): ClientesController->run()
+#13 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\wamp\www\yii\ClothingBox\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/perfil
+in C:\wamp\www\yii\ClothingBox\protected\views\clientes\perfil.php (12)
+in C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php (39)
+in C:\wamp\www\yii\ClothingBox\index.php (13)
+2015/03/02 16:16:25 [error] [exception.CException] exception 'CException' with message 'La propiedad "Usuarios"."aellido" no se encuentra definida.' in C:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('aellido')
+#1 C:\wamp\www\yii\ClothingBox\protected\views\clientes\perfil.php(22): CActiveRecord->__get('aellido')
+#2 C:\wamp\www\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#3 C:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#4 C:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#5 C:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('perfil', Array, true)
+#6 C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php(39): CController->render('perfil', Array)
+#7 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ClientesController->actionPerfil()
+#8 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('perfil')
+#17 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/perfil')
+#18 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/perfil
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/clientes/detalle_producto/2
+---
+2015/03/02 16:16:36 [error] [exception.CException] exception 'CException' with message 'La propiedad "Usuarios"."sexo" no se encuentra definida.' in C:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sexo')
+#1 C:\wamp\www\yii\ClothingBox\protected\views\clientes\perfil.php(26): CActiveRecord->__get('sexo')
+#2 C:\wamp\www\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#3 C:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#4 C:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#5 C:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('perfil', Array, true)
+#6 C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php(39): CController->render('perfil', Array)
+#7 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ClientesController->actionPerfil()
+#8 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('perfil')
+#17 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/perfil')
+#18 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/perfil
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/clientes/detalle_producto/2
+---
+2015/03/02 16:16:54 [error] [exception.CException] exception 'CException' with message 'La propiedad "Usuarios"."sexo" no se encuentra definida.' in C:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sexo')
+#1 C:\wamp\www\yii\ClothingBox\protected\views\clientes\perfil.php(26): CActiveRecord->__get('sexo')
+#2 C:\wamp\www\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#3 C:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#4 C:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#5 C:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('perfil', Array, true)
+#6 C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php(39): CController->render('perfil', Array)
+#7 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ClientesController->actionPerfil()
+#8 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('perfil')
+#17 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/perfil')
+#18 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/perfil
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/clientes/detalle_producto/2
+---
+2015/03/02 16:17:02 [error] [exception.CException] exception 'CException' with message 'La propiedad "Usuarios"."Sexos_idsexo" no se encuentra definida.' in C:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('Sexos_idsexo')
+#1 C:\wamp\www\yii\ClothingBox\protected\views\clientes\perfil.php(26): CActiveRecord->__get('Sexos_idsexo')
+#2 C:\wamp\www\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#3 C:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#4 C:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#5 C:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('perfil', Array, true)
+#6 C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php(39): CController->render('perfil', Array)
+#7 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ClientesController->actionPerfil()
+#8 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('perfil')
+#17 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/perfil')
+#18 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/perfil
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/clientes/detalle_producto/2
+---

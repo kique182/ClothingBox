@@ -36,7 +36,7 @@ class ClientesController extends Controller
     
     public function actionPerfil()
     {
-            $this->render('perfil');
+    	$this->render('perfil',array('data'=>$this->loadModelCliente(Yii::app()->user->id),));
     }
     
     public function actionProductos()
@@ -49,14 +49,21 @@ class ClientesController extends Controller
 
     public function actionDetalle_producto($id)
     {
-    	$this->render('detalle_producto',array(
-			'data'=>$this->loadModel($id),
-		));
+    	$dataProvider = new CActiveDataProvider('Productos');
+    	$this->render('detalle_producto',array('data'=>$this->loadModel($id),'dataProvider'=>$dataProvider,));
     }
 
     public function loadModel($id)
 	{
 		$model=Productos::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
+
+	public function loadModelCliente($id)
+	{
+		$model=Usuarios::model()->find('username="'.$id.'"');
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

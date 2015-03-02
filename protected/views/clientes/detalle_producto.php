@@ -5,7 +5,7 @@
 
 <div class="producto">
 	<div class="foto">
-		
+		<?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/fotos_productos/'.$data->foto,"foto",array("width"=>300, "height"=>200)); ?>
 	</div>
 	<div class="descripcion">
 		<div class="nombre">
@@ -34,4 +34,15 @@
 	<div class="botones">            
         <?php echo CHtml::link(CHtml::encode('Agregar al Carrito'), array('#', 'id'=>$data->idproducto), array('class'=>'boton_peque')); ?>
     </div>
+</div>
+
+<div id="lista_menu">
+	<h1>Productos</h1>
+</div> 
+<div id="caja_lista">
+	<?php $this->widget('zii.widgets.CListView', array(
+		'summaryText'=>'',
+		'dataProvider'=>$dataProvider,
+		'itemView'=>'_view_productos',
+	)); ?>
 </div>

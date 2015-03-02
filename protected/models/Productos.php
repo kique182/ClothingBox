@@ -39,9 +39,10 @@ class Productos extends CActiveRecord
 			array('precio', 'numerical'),
 			array('nombre', 'length', 'max'=>50),
 			array('descripcion', 'length', 'max'=>150),
+			array('foto','length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('idproducto, nombre, descripcion, precio, Categoria_idcategoria, Inventarios_idInventario', 'safe', 'on'=>'search'),
+			array('idproducto, nombre, descripcion, precio, Categoria_idcategoria, Inventarios_idInventario, foto', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -71,6 +72,7 @@ class Productos extends CActiveRecord
 			'precio' => 'Precio',
 			'Categoria_idcategoria' => 'Categoria',
 			'Inventarios_idInventario' => 'Inventarios',
+			'foto' => 'foto',
 		);
 	}
 
@@ -98,6 +100,8 @@ class Productos extends CActiveRecord
 		$criteria->compare('precio',$this->precio);
 		$criteria->compare('Categoria_idcategoria',$this->Categoria_idcategoria);
 		$criteria->compare('Inventarios_idInventario',$this->Inventarios_idInventario);
+		$criteria->compare('foto',$this->foto);
+
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
