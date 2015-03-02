@@ -8004,6 +8004,7 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/yii/ClothingBox/index.php/categorias/images/Imagenes/icono.png
 ---
+<<<<<<< HEAD
 2015/03/01 21:03:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\wamp\www\yii\framework\db\CDbConnection.php:382
 Stack trace:
 #0 C:\wamp\www\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
@@ -9095,4 +9096,543 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/yii/ClothingBox/index.php/clientes/logout
 HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/clientes/detalle_producto/1
+=======
+2015/03/02 10:25:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/Ima...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/Imagenes/icono.png
+---
+2015/03/02 11:01:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/1.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/1.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/2.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/2.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/3.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/3.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/4.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/4.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/5.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/5.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/6.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/6.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/7.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/7.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/8.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/8.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/9.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/9.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/14....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/14.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/12....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/12.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/13....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/13.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/10....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/10.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/15....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/15.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/11....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/11.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/1.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/1.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/2.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/2.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/6.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/6.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/3.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/3.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/8.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/8.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/5.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/5.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/4.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/4.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:01:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/7.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/7.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/6.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/6.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/2.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/2.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/4.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/4.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/5.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/5.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/11....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/11.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/3.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/3.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/9.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/9.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/12....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/12.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/7.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/7.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/14....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/14.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/1.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/1.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/13....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/13.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/8.j...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/8.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/10....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/10.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/15....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/images/15.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:05:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "js" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('js')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('js')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/js/images/...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/js/images/1.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:05:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "js" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('js')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('js')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/js/images/...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/js/images/2.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:09:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "js" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('js')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('js')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/js/images/...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/js/images/2.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:09:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "js" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('js')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('js')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/js/images/...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/js/images/2.jpg
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:19:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "js" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('js')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('js')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/js/jquery....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/js/jquery.catslider.js
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:21:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "js" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('js')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('js')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/js/jquery....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/js/jquery.catslider.js
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:22:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "js" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('js')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('js')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/js/jquery....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/js/jquery.catslider.js
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:23:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "js" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('js')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('js')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/js/jquery....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/js/jquery.catslider.js
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:24:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "js" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('js')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('js')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/js/jquery....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/js/jquery.catslider.js
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+---
+2015/03/02 11:24:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "js" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('js')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('js')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/js/jquery....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/site/js/jquery.catslider.js
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/site/index
+>>>>>>> origin/master
 ---
