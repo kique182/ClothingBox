@@ -39,7 +39,7 @@
                         array('label'=>Yii::app()->user->name, 'url'=>array('#'), 
                             'items' => array(
                             array('label' => 'Perfil', 'url' => array('perfil')),
-                            array('label' => 'Salir', 'url'=>array('logout'))),'visible'=>!Yii::app()->user->isGuest)
+                            array('label' => 'Salir', 'url'=>array('/site/logout'))),'visible'=>!Yii::app()->user->isGuest)
                 ),
         )); ?>
         </div><!-- mainmenu -->

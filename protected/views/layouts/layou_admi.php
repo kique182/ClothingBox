@@ -43,7 +43,7 @@
                             'items' => array(
                             array('label' => 'Métodos de Envio', 'url' => array('/metodoenvio/index')),
                             array('label' => 'Métodos de Pago', 'url' => array('/metodopago/index')))),
-                        array('label'=>'Usuarios', 'url'=>array('/usuarios/index'),
+                        array('label'=>'Usuarios', 'url'=>array('#'),
                             'items' => array(
                             array('label' => 'Crear Usuario', 'url' => array('/usuarios/create')),
                             array('label' => 'Listar Usuarios', 'url' => array('/usuarios/index')))),	

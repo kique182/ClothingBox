@@ -4,7 +4,6 @@
 ?>
 
 <div class="producto">
-
 	<div class="foto">
 		
 	</div>
@@ -32,4 +31,7 @@
 			<br />
 		</div>
 	</div>
+	<div class="botones">            
+        <?php echo CHtml::link(CHtml::encode('Agregar al Carrito'), array('#', 'id'=>$data->idproducto), array('class'=>'boton_peque')); ?>
+    </div>
 </div>

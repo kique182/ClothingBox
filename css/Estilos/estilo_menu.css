@@ -77,9 +77,9 @@
 }
 #menu > ul ul > li {position: relative;}
 #menu ul ul a {
-  /*font-family: agency_fb;*/
+  font-family: agency_fb;
   color: #323232;
-  font-size: 15px;
+  font-size: 15pt;
   background-color: #fafafa;
   padding: 5px 8px 7px 16px;
   display: block;
