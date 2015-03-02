@@ -140,7 +140,7 @@ class SiteController extends Controller
 				}
 				else if(Yii::app()->authManager->checkAccess('Cliente',Yii::app()->user->id))
 				{
-					$this->redirect(Yii::app()->user->returnUrl.'/cliente/index');
+					$this->redirect(Yii::app()->user->returnUrl.'/clientes/index');
 				}
 				else if(Yii::app()->authManager->checkAccess('Usuario',Yii::app()->user->id))
 				{
@@ -185,9 +185,9 @@ class SiteController extends Controller
 			$model->Rol_idrol = 2;
 			$model->fecha_registro = new CDbExpression('NOW()');
 			if($model->Sexo_idsexo == 1)
-				$model->foto = "silueta.png";
+				$model->foto = "silueta_muj.png";
 			else
-				$model->foto = "silueta.jpg";
+				$model->foto = "silueta_hom.jpg";
 			if($model->save())
 			{
 				$auth = Yii::app()->authManager;

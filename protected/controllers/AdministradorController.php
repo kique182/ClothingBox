@@ -42,13 +42,10 @@ class AdministradorController extends Controller
     {
     		$this->render('categorias');
     }
-<<<<<<< HEAD
+    
     public function actionMetodo_pago()
     {
     		$this->render('metodo_pago');
     }
-=======
-    
->>>>>>> 76a11a59778e7b57f9a9c0bf6ec9a359c2279261
     
 }

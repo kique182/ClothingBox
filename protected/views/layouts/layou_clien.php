@@ -30,17 +30,16 @@
         <div id="menu">
         <?php $this->widget('zii.widgets.CMenu',array(
                 'items'=>array(
-                        array('label'=>'Inicio', 'url'=>array('/site/index')),
-                        array('label'=>'Productos', 'url'=>array('/site/productos'),
+                        array('label'=>'Inicio', 'url'=>array('index')),
+                        array('label'=>'Productos', 'url'=>array('productos'),
                             'items' => array(
                             array('label' => 'Mujer', 'url' => '#'),
                             array('label' => 'Hombre', 'url' => '#'))),
-                        array('label'=>'Contácto', 'url'=>array('#')),                        
-                        array('label'=>'Iniciar Sesión', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+                        array('label'=>'Contácto', 'url'=>array('#')),
                         array('label'=>Yii::app()->user->name, 'url'=>array('#'), 
                             'items' => array(
                             array('label' => 'Perfil', 'url' => array('perfil')),
-                            array('label' => 'Salir', 'url'=>array('/site/logout'))),'visible'=>!Yii::app()->user->isGuest)
+                            array('label' => 'Salir', 'url'=>array('logout'))),'visible'=>!Yii::app()->user->isGuest)
                 ),
         )); ?>
         </div><!-- mainmenu -->

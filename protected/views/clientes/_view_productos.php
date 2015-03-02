@@ -17,6 +17,6 @@
         </h3>
     </div>  
     <div class="botones">            
-        <?php echo CHtml::link(CHtml::encode('Comprar'), array('/clientes/index'), array('class'=>'boton_peque')); ?>
+        <?php echo CHtml::link(CHtml::encode('Ver Detalle'), array('detalle_producto','id'=>$data->idproducto), array('class'=>'boton_peque')); ?>
     </div>
 </div>

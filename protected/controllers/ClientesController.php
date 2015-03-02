@@ -5,9 +5,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-class ClienteController extends Controller
+class ClientesController extends Controller
 {
-    public $layout='//layouts/main';
+    public $layout='//layouts/layou_clien';
 
     public function filters()
 	{
@@ -39,5 +39,27 @@ class ClienteController extends Controller
             $this->render('perfil');
     }
     
+    public function actionProductos()
+    {
+    	$dataProvider = new CActiveDataProvider('Productos');
+		$this->render('productos',array(
+			'dataProvider'=>$dataProvider,
+		));
+    }
+
+    public function actionDetalle_producto($id)
+    {
+    	$this->render('detalle_producto',array(
+			'data'=>$this->loadModel($id),
+		));
+    }
+
+    public function loadModel($id)
+	{
+		$model=Productos::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
     
 }
