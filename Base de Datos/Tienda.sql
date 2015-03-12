@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 23-02-2015 a las 22:07:02
+-- Tiempo de generación: 01-03-2015 a las 22:14:10
 -- Versión del servidor: 10.0.13-MariaDB
 -- Versión de PHP: 5.6.1
 
@@ -38,7 +38,9 @@ CREATE TABLE IF NOT EXISTS `auth_asignacion` (
 --
 
 INSERT INTO `auth_asignacion` (`itemname`, `userid`, `bizrule`, `data`) VALUES
-('Administrador', 'javio', NULL, 'N;');
+('Administrador', 'javio', NULL, 'N;'),
+('Cliente', 'enedina', NULL, 'N;'),
+('Cliente', 'gerardo', NULL, 'N;');
 
 -- --------------------------------------------------------
 
@@ -338,24 +340,26 @@ CREATE TABLE IF NOT EXISTS `Usuarios` (
   `username` varchar(50) NOT NULL,
   `password` varchar(150) NOT NULL,
   `Sexo_idsexo` int(11) NOT NULL,
-  `Estado_idestado` varchar(50) NOT NULL,
+  `Estado_idestado` int(11) NOT NULL,
   `Rol_idrol` int(11) NOT NULL,
-  `fecha_registro` date DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+  `fecha_registro` date DEFAULT NULL,
+  `foto` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `Usuarios`
 --
 
-INSERT INTO `Usuarios` (`idusuario`, `nombre`, `apellido`, `cedula`, `direccion`, `telefono`, `fecha_nacimiento`, `email`, `username`, `password`, `Sexo_idsexo`, `Estado_idestado`, `Rol_idrol`, `fecha_registro`) VALUES
-(9, 'Alexis Javier', 'Moreno Urbina', '', '', '04264567689', '0000-00-00', 'javiomoreno@gmail.com', 'javio', '2396d5f8cd3b89883d94a39c9e87158b', 0, 'activo', 1, '2014-11-24'),
-(37, 'Fernando Enrique', 'Medina Andara', '', '', '04247193844', '0000-00-00', 'kique19834@gmail.com', 'nando', '12345', 0, 'incativo', 2, '2014-11-25'),
-(38, 'Petronilo', 'Zambrano Escalante', '', '', '04264567689', '0000-00-00', 'pedr2o@gmail.com', 'pedroq', 'c20ad4d76fe97759aa27a0c99bff6710', 0, 'activo', 2, '2014-12-05'),
-(39, 'Maria Jose', 'Zambrano Escalante', '12345678', 'La Florida', '04264567689', '1995-08-17', 'majozaes17@gmail.com', 'majo', '12345', 1, 'activo', 1, '2014-12-08'),
-(40, 'Juan Luis', 'Guerra', '13122352', 'Los Cuatro Cuarenta', '20491209420', '1974-12-23', 'juanluisguerra@gmail.com', 'juanluis', '502ff82f7f1f8218dd41201fe4353687', 3, 'activo', 2, '2014-12-08'),
-(41, 'Maria Jose', 'Zambrano Escalante', '13122352', 'La Florida', '04264567689', '1995-08-17', 'majozaes1@gmail.com', 'majozaes', 'majo', 1, 'activo', 2, '2015-02-22'),
-(43, 'Maria Jose', 'Zambrano Escalante', '12345678', 'La Florida', '04264567689', '1995-08-17', 'majozaes@gmail.com', 'majoza', 'majo', 1, 'activo', 2, '2015-02-22'),
-(53, 'Fernando', 'Medina', '12345678', 'Los Cuatro Cuarenta', '04264567689', '2015-02-09', 'fernando@gmail.com', 'fernando', '202cb962ac59075b964b07152d234b70', 1, 'activo', 2, '2015-02-22');
+INSERT INTO `Usuarios` (`idusuario`, `nombre`, `apellido`, `cedula`, `direccion`, `telefono`, `fecha_nacimiento`, `email`, `username`, `password`, `Sexo_idsexo`, `Estado_idestado`, `Rol_idrol`, `fecha_registro`, `foto`) VALUES
+(9, 'Alexis Javier', 'Moreno Urbina', '18393355', 'La FLorida', '04264567689', '0000-00-00', 'javiomoreno@gmail.com', 'javio', '2396d5f8cd3b89883d94a39c9e87158b', 0, 1, 1, '2014-11-24', 'javier.png'),
+(37, 'Fernando Enrique', 'Medina Andara', '', '', '04247193844', '0000-00-00', 'kique19834@gmail.com', 'nando', '12345', 0, 1, 2, '2014-11-25', ''),
+(38, 'Petronilo', 'Zambrano Escalante', '', '', '04264567689', '0000-00-00', 'pedr2o@gmail.com', 'pedroq', 'c20ad4d76fe97759aa27a0c99bff6710', 0, 1, 2, '2014-12-05', ''),
+(39, 'Maria Jose', 'Zambrano Escalante', '12345678', 'La Florida', '04264567689', '1995-08-17', 'majozaes17@gmail.com', 'majo', '12345', 1, 1, 1, '2014-12-08', ''),
+(41, 'Maria Jose', 'Zambrano Escalante', '13122352', 'La Florida', '04264567689', '1995-08-17', 'majozaes1@gmail.com', 'majozaes', 'majo', 1, 1, 2, '2015-02-22', ''),
+(43, 'Maria Jose', 'Zambrano Escalante', '12345678', 'La Florida', '04264567689', '1995-08-17', 'majozaes@gmail.com', 'majoza', 'majo', 1, 1, 2, '2015-02-22', ''),
+(53, 'Fernando', 'Medina', '12345678', 'Los Cuatro Cuarenta', '04264567689', '2015-02-09', 'fernando@gmail.com', 'fernando', '202cb962ac59075b964b07152d234b70', 1, 2, 2, '2015-02-22', 'silueta.jpg'),
+(54, 'Enedina', 'Urbina', '6611832', 'La Florida parte alta', '04164769710', '1960-06-19', 'enedinaurbina@gmail.com', 'enedina', '827ccb0eea8a706c4c34a16891f84e7b', 1, 1, 2, '2015-02-24', 'silueta.png'),
+(55, 'Gerardo', 'Moreno Ramirez', '4205369', 'La Florida parte alta', '02773117750', '1943-04-23', 'gerardomoreno@gmail.com', 'gerardo', '827ccb0eea8a706c4c34a16891f84e7b', 2, 1, 2, '2015-02-24', 'silueta.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -521,7 +525,7 @@ MODIFY `id_sexo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT de la tabla `Usuarios`
 --
 ALTER TABLE `Usuarios`
-MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=54;
+MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=56;
 --
 -- Restricciones para tablas volcadas
 --

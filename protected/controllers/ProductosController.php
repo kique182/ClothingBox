@@ -37,7 +37,7 @@ class ProductosController extends Controller
 				'roles'=>array('Usuario'),
 				'users'=>array('@'),
 				),
-			
+
 			array('deny', // deny all users
 				'users'=>array('*'),
 				),

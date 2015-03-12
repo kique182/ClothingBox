@@ -5,7 +5,7 @@
 
 $this->pageTitle=Yii::app()->name . ' - Iniciar Sesión';
 ?>
-<div class="contenido">
+
     <div class='info' style='text-align:center;'>
             <?php
                 $flashMessages = Yii::app()->user->getFlashes();
@@ -44,4 +44,3 @@ $this->pageTitle=Yii::app()->name . ' - Iniciar Sesión';
             <?php $this->endWidget(); ?>
         </div>
     </div>
-</div>

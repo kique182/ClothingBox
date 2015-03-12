@@ -140,7 +140,7 @@ class SiteController extends Controller
 				}
 				else if(Yii::app()->authManager->checkAccess('Cliente',Yii::app()->user->id))
 				{
-					$this->redirect(Yii::app()->user->returnUrl.'/cliente/index');
+					$this->redirect(Yii::app()->user->returnUrl.'/clientes/index');
 				}
 				else if(Yii::app()->authManager->checkAccess('Usuario',Yii::app()->user->id))
 				{
@@ -181,10 +181,13 @@ class SiteController extends Controller
 				$model->password = md5($model->password);
 				$model->repetirpassword = md5($model->repetirpassword);
 			}
-			$model->Estado_idestado = 'activo';
+			$model->Estado_idestado = 1;
 			$model->Rol_idrol = 2;
 			$model->fecha_registro = new CDbExpression('NOW()');
-			
+			if($model->Sexo_idsexo == 1)
+				$model->foto = "silueta_muj.png";
+			else
+				$model->foto = "silueta_hom.jpg";
 			if($model->save())
 			{
 				$auth = Yii::app()->authManager;
@@ -205,5 +208,13 @@ class SiteController extends Controller
 	public function actionPerfil()
 	{
 		$this->render('perfil');
+	}
+
+	public function actionProductos()
+	{
+		$dataProvider = new CActiveDataProvider('Productos');
+		$this->render('productos',array(
+			'dataProvider'=>$dataProvider,
+		));
 	}
 }

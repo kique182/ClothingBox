@@ -9,7 +9,7 @@
 
 <div id="usuario_uno">  
     <div class="foto">
-            
+        <?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/fotos_productos/'.$data->foto,"foto",array("width"=>190, "height"=>150)); ?>
     </div>
     <div class="nombre">
         <h3>

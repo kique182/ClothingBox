@@ -77,9 +77,9 @@
 }
 #menu > ul ul > li {position: relative;}
 #menu ul ul a {
-  /*font-family: agency_fb;*/
+  font-family: agency_fb;
   color: #323232;
-  font-size: 15px;
+  font-size: 15pt;
   background-color: #fafafa;
   padding: 5px 8px 7px 16px;
   display: block;
@@ -95,6 +95,6 @@
   visibility: visible;
 }
 #menu ul ul a:hover {
-  background-color: #0087db;
+  background-color: #0404B4;
   color: #f0f0f0;
 }

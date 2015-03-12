@@ -10,16 +10,13 @@
     <link rel="icon" type="image/png" href="images/Imagenes/icono.png" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
-	<!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
-	<![endif]-->
-
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilos.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_menu.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_login.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_registro.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/usuarios_admin.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_menu.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_login.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_registro.css" />
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -27,14 +24,14 @@
 <body>
     <header>
         <div class="logo">
-            <?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/Imagenes/logo2.png');?>
-            <p><?php echo CHtml::encode(Yii::app()->name); ?></p>
+            <a href="#"><?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/Imagenes/logo2.png');?>
+            <p><?php echo CHtml::encode(Yii::app()->name); ?></p></a>
         </div>
         <div id="menu">
         <?php $this->widget('zii.widgets.CMenu',array(
                 'items'=>array(
                         array('label'=>'Inicio', 'url'=>array('/site/index')),
-                        array('label'=>'Productos', 'url'=>array('#'),
+                        array('label'=>'Productos', 'url'=>array('/site/productos'),
                             'items' => array(
                             array('label' => 'Mujer', 'url' => '#'),
                             array('label' => 'Hombre', 'url' => '#'))),
@@ -53,9 +50,9 @@
             )); ?><!-- breadcrumbs -->
         <?php endif?>
     </header><!-- header -->
-
-    <?php echo $content; ?>
-
+    <div class="contenido">
+        <?php echo $content; ?>
+    </div>
     <div class="clear"></div>
 
     <div id="footer">
