@@ -52,6 +52,6 @@
 		</div>
 	</div>
 	<div class="botones">            
-        <?php echo CHtml::link(CHtml::encode('Editar'), array('#', 'id'=>$data->idusuario), array('class'=>'boton_peque')); ?>
+        <?php echo CHtml::link(CHtml::encode('Editar'), array('update_perfil'), array('class'=>'boton_peque')); ?>
     </div>
 </div>

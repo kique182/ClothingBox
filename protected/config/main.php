@@ -8,7 +8,8 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'ClothingBox',
-        'language'=>'es',
+    'language'=>'es',
+    'defaultController'=>'site/index',
 
 	// preloading 'log' component
 	'preload'=>array('log'),

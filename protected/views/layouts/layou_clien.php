@@ -7,7 +7,7 @@
 
 	<!-- blueprint CSS framework -->
 
-    <link rel="icon" type="image/png" href="images/Imagenes/icono.png" />
+    <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/Imagenes/icono.png" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
@@ -33,8 +33,8 @@
                         array('label'=>'Inicio', 'url'=>array('index')),
                         array('label'=>'Productos', 'url'=>array('productos'),
                             'items' => array(
-                            array('label' => 'Mujer', 'url' => '#'),
-                            array('label' => 'Hombre', 'url' => '#'))),
+                            array('label' => 'Mujer', 'url' => array('productos_mujer')),
+                            array('label' => 'Hombre', 'url' => array('productos_hombre')))),
                         array('label'=>'Contácto', 'url'=>array('#')),
                         array('label'=>Yii::app()->user->name, 'url'=>array('#'), 
                             'items' => array(

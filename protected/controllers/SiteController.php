@@ -60,15 +60,6 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-
-               /* $auth = Yii::app()->authManager;
-		$auth->createRole('Administrador','Rol de Administrador');
-		$auth->assign('Administrador','javio');
-
-		$auth->createRole('Usuario', 'Rol de Usuario');
-		$auth->assign('Usuario','fernando');*/
 		$this->render('index');
 	}
 

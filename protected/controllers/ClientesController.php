@@ -69,4 +69,39 @@ class ClientesController extends Controller
 		return $model;
 	}
     
+    public function actionUpdate_perfil()
+    {
+    	$model=$this->loadModelCliente(Yii::app()->user->id);
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Usuarios']))
+		{
+			$model->attributes=$_POST['Usuarios'];
+			$model->repetirpassword = $model->password;
+			if($model->save())
+			{
+				Yii::app()->user->setFlash('success', 'El Usuario ha sido modificado satisfactoriamente..!!');
+				$this->redirect(array('update_perfil', 'id'=>$model->idusuario));
+			}
+			Yii::app()->user->setFlash('error', 'Se ha producido un Error.!!');
+		}
+
+		$this->render('update_perfil',array(
+			'model'=>$model,
+		));
+    }
+
+    public function actionProductos_hombre()
+    {
+    	$model=Productos::model()->find('Categoria_idcategoria=2');
+    	$this->render('productos_hombre',array('data'=>$model));
+    }
+
+    public function actionProductos_mujer()
+    {
+    	$model=Productos::model()->find('Categoria_idcategoria=1');
+    	$this->render('productos_mujer',array('data'=>$model));
+    }
 }
