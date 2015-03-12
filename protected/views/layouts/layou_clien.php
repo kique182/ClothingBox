@@ -1,4 +1,7 @@
-<?php /* @var $this Controller */ ?>
+<?php /* @var $this Controller */ 
+        Yii::app()->clientScript->registerCoreScript('jquery');
+        Yii::app()->clientScript->registerCoreScript('jquery.ui');
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -17,6 +20,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_menu.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_login.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_registro.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/js/css/style.css" />
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/modernizr.custom.63321.js"></script>
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -24,21 +29,32 @@
 <body>
     <header>
         <div class="logo">
-            <a href="#"><?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/Imagenes/logo2.png');?>
+            <a href="index"><?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/Imagenes/logo2.png');?>
             <p><?php echo CHtml::encode(Yii::app()->name); ?></p></a>
+        </div>
+        <div class="carrito">
+            <?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/Imagenes/carrito.png');?>
+            <div class="cantidad">
+                0
+            </div>
+            <div class="botoncito">
+                <?php echo CHtml::link(CHtml::encode('Pagar'), array('detalle_producto',), array('class'=>'boton_peque')); ?>
+            </div>
         </div>
         <div id="menu">
         <?php $this->widget('zii.widgets.CMenu',array(
                 'items'=>array(
                         array('label'=>'Inicio', 'url'=>array('index')),
-                        array('label'=>'Productos', 'url'=>array('productos'),
+                        array('label'=>'Productos', 'url'=>array('productos', 'tipo'=>'0'),
                             'items' => array(
-                            array('label' => 'Mujer', 'url' => array('productos_mujer')),
-                            array('label' => 'Hombre', 'url' => array('productos_hombre')))),
+                            array('label' => 'Mujer', 'url' => array('productos', 'tipo'=>'1')),
+                            array('label' => 'Hombre', 'url' => array('productos', 'tipo'=>'2')))),
                         array('label'=>'Contácto', 'url'=>array('#')),
                         array('label'=>Yii::app()->user->name, 'url'=>array('#'), 
                             'items' => array(
                             array('label' => 'Perfil', 'url' => array('perfil')),
+                            array('label' => 'Pedidos', 'url' => array('#')),
+                            array('label' => 'Reclamos', 'url' => array('#')),
                             array('label' => 'Salir', 'url'=>array('/site/logout'))),'visible'=>!Yii::app()->user->isGuest)
                 ),
         )); ?>
@@ -49,7 +65,7 @@
             )); ?><!-- breadcrumbs -->
         <?php endif?>
     </header><!-- header -->
-    <div class="contenido">
+    <div class="contenido_afuera">
         <?php echo $content; ?>
     </div>
     <div class="clear"></div>

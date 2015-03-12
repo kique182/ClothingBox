@@ -32,7 +32,7 @@ $this->pageTitle=Yii::app()->name . ' - Iniciar Sesión';
 
         <h1>Iniciar Sesión</h1>
         <div class="campos_llenar">
-            <?php echo $form->textField($model,'username', array('class'=>'usuario', 'placeholder'=>'Ingrese su Email')); ?>
+            <?php echo $form->textField($model,'username', array('class'=>'usuario', 'placeholder'=>'Ingrese su Usuario')); ?>
         </div>
         <div class="campos_llenar">
             <?php echo $form->passwordField($model,'password' , array('class'=>'usuario', 'placeholder'=>'Ingrese su Contraseña')); ?>

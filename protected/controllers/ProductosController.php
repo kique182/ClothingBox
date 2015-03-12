@@ -70,6 +70,8 @@ class ProductosController extends Controller
 		{
 			$model->attributes=$_POST['Productos'];
 			$model->nombre = ucfirst($model->nombre);
+			$model->foto = 'hola.jpg';
+			$model->Inventarios_idInventario = 1;
 			if($model->save())
 			{
 				Yii::app()->user->setFlash('success', 'Registro Guardado Satisfactoriamente..!!');

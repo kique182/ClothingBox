@@ -25,6 +25,8 @@
             <a href="#"><?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/Imagenes/logo2.png');?>
             <p><?php echo CHtml::encode(Yii::app()->name); ?></p></a>
         </div>
+        <div class="carrito">
+        </div>
         <div id="menu">
         <?php $this->widget('zii.widgets.CMenu',array(
                 'items'=>array(

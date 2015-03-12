@@ -39,18 +39,37 @@ class ClientesController extends Controller
     	$this->render('perfil',array('data'=>$this->loadModelCliente(Yii::app()->user->id),));
     }
     
-    public function actionProductos()
+    public function actionProductos($tipo)
     {
-    	$dataProvider = new CActiveDataProvider('Productos');
-		$this->render('productos',array(
-			'dataProvider'=>$dataProvider,
-		));
+    	if($tipo == 0)
+    	{
+	    	$dataProvider = new CActiveDataProvider('Productos');
+			$this->render('productos',array('dataProvider'=>$dataProvider));
+		}
+		else if($tipo == 1)
+		{
+			$model=Productos::model()->find('Categoria_idcategoria=1');
+    		$this->render('productos_mujer',array('data'=>$model,'tipo'=>$tipo));
+		}
+		else if($tipo == 2)
+		{
+			$model=Productos::model()->findAll('Categoria_idcategoria=2');
+    		$this->render('productos_hombre',array('data'=>$model,'tipo'=>$tipo));
+		}
     }
 
-    public function actionDetalle_producto($id)
+    public function actionDetalle_producto($id, $tipo)
     {
-    	$dataProvider = new CActiveDataProvider('Productos');
-    	$this->render('detalle_producto',array('data'=>$this->loadModel($id),'dataProvider'=>$dataProvider,));
+    	if($tipo==0)
+    	{
+    		$model=Productos::model()->findAll();
+    		$this->render('detalle_producto',array('data'=>$this->loadModel($id),'dataProvider'=>$model,'tipo'=>$tipo));
+    	}
+    	else
+    	{
+    		$model=Productos::model()->findAll('Categoria_idcategoria='.$tipo);
+    		$this->render('detalle_producto',array('data'=>$this->loadModel($id),'dataProvider'=>$model,'tipo'=>$tipo));
+    	}
     }
 
     public function loadModel($id)
@@ -93,15 +112,4 @@ class ClientesController extends Controller
 		));
     }
 
-    public function actionProductos_hombre()
-    {
-    	$model=Productos::model()->find('Categoria_idcategoria=2');
-    	$this->render('productos_hombre',array('data'=>$model));
-    }
-
-    public function actionProductos_mujer()
-    {
-    	$model=Productos::model()->find('Categoria_idcategoria=1');
-    	$this->render('productos_mujer',array('data'=>$model));
-    }
 }
