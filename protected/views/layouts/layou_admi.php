@@ -27,8 +27,8 @@
 <body>
     <header>
         <div class="logo">
-            <?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/Imagenes/logo2.png');?>
-            <p><?php echo CHtml::encode(Yii::app()->name); ?></p>
+            <a href="#"><?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/Imagenes/logo2.png');?>
+            <p><?php echo CHtml::encode(Yii::app()->name); ?></p></a>
         </div>
         <div id="menu">
         <?php $this->widget('zii.widgets.CMenu',array(
