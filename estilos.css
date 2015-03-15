@@ -43,29 +43,6 @@ header
     overflow: hidden;
 }
 
-.carrito
-{
-    margin-top: 30px;
-    float: right;
-    width: 200px;
-    height: 50px;
-}
-
-.carrito .cantidad
-{
-    float: left;
-    padding-top: 10px;
-    font-size: 15pt;
-    color: blue;
-    font-weight: bold;
-}
-
-.carrito .botoncito
-{
-    padding-top: 12px;
-    float: right;
-}
-
 /* Contenido en General */
 
 .contenido
@@ -75,19 +52,6 @@ header
     padding-left: 50px;
     padding-right: 20px;
     width: 930px;
-    height: 1000px;
-    box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.4);
-    border: 1px solid #b0b0b0;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 1);
-}
-
-.contenido_afuera
-{
-    margin: auto;
-    padding-top: 30px;
-    padding-left: 50px;
-    padding-right: 20px;
-    width: 1000px;
     height: 1000px;
     border: 1px solid #b0b0b0;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 1);
@@ -172,12 +136,12 @@ header
     margin-top: 10px;
     margin-left: 10px;
 }
+
 .caja{
 	margin-left:-10px;
-	width: 910px;
-    height: 220px;
-    background-color: #E2E8DA;
-	box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.4);
+	width: 860px;
+    height: 200px;
+    background-color: #a3a3a3;
 }
 
 .caja .facebook{
@@ -187,14 +151,14 @@ header
 }
 
 .informacion{
-	width:270px;
-	height:160px;
+	width:250px;
+	height:100px;
 	margin-top:30px;
 	margin-left:50px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size:14px;
 	color: white;
-	border-left: 2px dotted #3F383F;
+	border-left: 2px solid #E1D663;
 	float: left;
 	padding-bottom: 30px;
 	padding-left: 30px;
@@ -202,21 +166,21 @@ header
 }
 
 .informacion a{
-	color: #3F383F;
-	font-family: agency_fb;
-	font-size: 16px;
+	color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
 	font-weight: bold;
-	
+	font-style:italic;
 	
 }
-a:link { color: 3F383F; text-decoration: none }
+a:link { color: white; text-decoration: none }
 a:active { color: red; text-decoration: none }
 a:visited { color: white; text-decoration: none }
 a:hover { color: black; text-decoration: underline }
 
 .informacion span{
 	color:#E1D663;
-	font-family: agency_fb;
+	font-family: Georgia,'Times New Roman',Times,serif;
 	font-size: 30px;
 	font-weight: bold;
 	font-style:italic;
