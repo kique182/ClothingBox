@@ -56,11 +56,17 @@ $this->pageTitle=Yii::app()->name; ?>
 	</div>
 	<table class="facebook">
 	
-		<tr><td><img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/face.png"></td></tr>
-		<tr><td><img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/insta.png"></td></tr>
+		<tr><td><img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/facebook.png"></td></tr>
+		<tr><td><img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/instagram.png"></td></tr>
+		<tr><td><img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/twitter.png"></td></tr>
 		
 	
 	</table>
+
+	<div class="envios">
+	<img style="display:block;" src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/envios.jpg">
+
+	</div> 
 
 </div>   
 
