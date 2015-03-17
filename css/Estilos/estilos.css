@@ -172,31 +172,64 @@ header
     margin-top: 10px;
     margin-left: 10px;
 }
+.consigna{
+    margin: auto;
+	margin-left:5px;
+	width: 500px;
+	height: 100px;
+	background-color: #fff;
+
+}
+
+
 .caja{
-	margin-left:-10px;
-	width: 910px;
-    height: 400px;
+    margin-top:-60px;
+	margin-left:5px;
+	width: 900px;
+    height: 200px;
     background-color: #E2E8DA;
 	box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.4);
 }
 
-.caja .envios{
-     margin-top: 30px;
-	 margin-left: 270px;
-	 position: absolute;
-    
 
-
+.caja .envios {
+    width:200px;
+	height:160px;
+	margin-top:30px;
+	margin-left:70px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color: white;
+	float: left;
+	padding-bottom: 30px;
+	padding-left: 30px;
+	text-align: left;
 }
 
+
 .caja .facebook{
+	 width:220px;
+	 height:160px;
 	 margin-top: 10px;
-	 margin-left: 800px;
+	 margin-left: 690px;
 	 position: absolute;
+	 font-family: Arial, Helvetica, sans-serif;
+	 font-size:14px;
+	 
+	 
+	 
+}
+.facebook a{
+    color: #3F383F;
+	font-family: agency_fb;
+	font-size: 16px;
+	font-weight: bold;
+
+
 }
 
 .informacion{
-	width:250px;
+	width:200px;
 	height:160px;
 	margin-top:30px;
 	margin-left:50px;
@@ -220,7 +253,7 @@ header
 }
 a:link { color: 3F383F; text-decoration: none }
 a:active { color: red; text-decoration: none }
-a:visited { color: white; text-decoration: none }
+a:visited { color: black; text-decoration: none }
 a:hover { color: black; text-decoration: underline }
 
 .informacion span{
@@ -229,5 +262,114 @@ a:hover { color: black; text-decoration: underline }
 	font-size: 30px;
 	font-weight: bold;
 	font-style:italic;
+}
+.facebook span{
+    color:#E1D663;
+	font-family: agency_fb;
+	font-size: 30px;
+	font-weight: bold;
+	font-style:italic;
+
+}
+
+.searchform {
+
+display: inline-block;
+float:right;
+margin-top:-80px;
+zoom: 1; /* ie7 hack para display:inline-block */
+
+*display: inline;
+
+border: solid 1px #d2d2d2;
+
+padding: 5px 30px;
+
+-webkit-border-radius: 2em;
+
+-moz-border-radius: 2em;
+
+border-radius: 2em;
+
+-webkit-box-shadow: 0 1px 0px rgba(0,0,0,.1);
+
+-moz-box-shadow: 0 1px 0px rgba(0,0,0,.1);
+
+box-shadow: 0 1px 0px rgba(0,0,0,.1);
+
+background: #f1f1f1;
+
+background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+
+background: -moz-linear-gradient(top,  #fff,  #ededed);
+
+filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie7 */
+
+-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie8 */
+
+}
+
+.searchform input {
+
+font: normal 12px/100% Arial, Helvetica, sans-serif;
+
+}
+
+.searchform .searchfield {
+
+background: #fff;
+height:160px;
+padding: 8px 8px 8px 8px;
+margin:auto;
+width: 220px;
+
+border: solid 1px #bcbbbb;
+
+outline: none;
+
+-webkit-border-radius: 2em;
+
+-moz-border-radius: 2em;
+
+border-radius: 2em;
+
+-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+
+-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+
+box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+
+}
+
+.searchform .searchbutton {
+
+color: #fff;
+
+border: solid 1px #494949;
+
+font-size: 11px;
+
+height: 37px;
+
+width: 35px;
+
+text-shadow: 0 1px 1px rgba(0,0,0,.6);
+
+-webkit-border-radius: 5em;
+
+-moz-border-radius: 5em;
+
+border-radius: 5em;
+
+background: #5f5f5f;
+
+background: -webkit-gradient(linear, left top, left bottom, from(#9e9e9e), to(#454545));
+
+background: -moz-linear-gradient(top,  #9e9e9e,  #454545);
+
+filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie7 */
+
+-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie8 */
+
 }
 

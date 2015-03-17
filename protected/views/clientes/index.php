@@ -1,4 +1,10 @@
 <div class="main">
+<div class="consigna"
+<a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/frase.png" alt="img12"></a></div>
+<div class="searchform">
+<input type="text" value="Buscar..." onfocus="if (this.value == 'Buscar...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Buscar...';}" />
+<img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/lupa.png">
+</div>
 	<div id="mi-slider" class="mi-slider">
 		<ul>
 			<li><a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/1.png" alt="img01"><h4>Botas</h4></a></li>
@@ -51,16 +57,16 @@
 	</div>
 	<table class="facebook">
 	
-		<tr><td><img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/facebook.png"></td></tr>
-		<tr><td><img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/instagram.png"></td></tr>
-		<tr><td><img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/twitter.png"></td></tr>
+		<tr><td><img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/facebook.png"><a href="#">facebook.com/ClothingBox</a></td></tr>
+		<tr><td><img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/instagram.png"><a href="#">@ClothingBox</a></td></tr>
+		<tr><td><img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/twitter.png"><a href="#">@ClothingBox</a></td></tr>
 		
 	
 	
 	</table>
-	<div class="envios">
-	<img style="display:block;" src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/envios.jpg">
+    <div class="post-body">
+	<div>
+	<img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/envios.png" />
 
-	</div> 
-
-</div>   
+	</div>	
+	</div>   
