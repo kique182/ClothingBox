@@ -59,7 +59,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=Tienda',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'Javier19',
+			'password' => '',
 			'charset' => 'utf8',
 		),
 		

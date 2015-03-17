@@ -1,6 +1,9 @@
 <?php /* @var $this Controller */ 
         Yii::app()->clientScript->registerCoreScript('jquery');
         Yii::app()->clientScript->registerCoreScript('jquery.ui');
+        
+
+//session_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -75,6 +78,7 @@
             Todos los Derechos Reservados.<br/>
             <?php echo Yii::powered(); ?>
     </div><!-- footer -->
-
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/jcart/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/modernizr.custom.63321.js"></script>
 </body>
 </html>
