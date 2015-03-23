@@ -13,7 +13,7 @@
 
 	<!-- blueprint CSS framework -->
 
-    <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/Imagenes/icono.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/Imagenes/carrito.png" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
@@ -38,7 +38,20 @@
         <div class="carrito">
             <?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/Imagenes/carrito.png');?>
             <div class="cantidad">
-                0
+                <?php 
+                    /*$precio = 0;
+                    $i = 1;
+                    
+                    foreach ($canti as $can) 
+                    {
+                        $preci = Yii::app()->db->createCommand()->select('precio')->from('Productos')->where('idproducto=:id', array(':id'=>$can['Productos_id_producto']))->queryScalar();
+                        $precio = $preci + $precio;
+                    }
+                    */
+                    $canti = Yii::app()->db->createCommand()->select('*')->from('Facturas')->where('Usuarios_username=:username', array(':username'=>Yii::app()->user->id))->queryAll();
+                    $cantidad = count($canti);
+                    echo $cantidad;
+                ?>
             </div>
             <div class="botoncito">
                 <?php echo CHtml::link(CHtml::encode('Pagar'), array('detalle_producto',), array('class'=>'boton_peque')); ?>

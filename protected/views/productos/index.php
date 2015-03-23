@@ -7,7 +7,7 @@
 	<h1>Productos</h1>
 	<ul>
 		<li>
-			<?php echo CHtml::button('Crear Producto', array('class'=>'boton_peque', 'submit'=>array('productos/create'))) ; ?>
+			<?php echo CHtml::link(CHtml::encode('Crear Producto'), array('create'), array('class'=>'boton_peque')); ?>
 		</li>
 	</ul>
 </div> 

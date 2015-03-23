@@ -60,15 +60,41 @@ class ClientesController extends Controller
 
     public function actionDetalle_producto($id, $tipo)
     {
+    	$model_facturas=new Facturas;
+
+		if(isset($_POST['Facturas']))
+		{
+			$model_facturas->attributes=$_POST['Facturas'];
+			if($model_facturas->save())
+			{
+				if($tipo == 0)
+		    	{
+			    	$dataProvider = new CActiveDataProvider('Productos');
+					$this->render('productos',array('dataProvider'=>$dataProvider));
+				}
+				else if($tipo == 1)
+				{
+					$model=Productos::model()->find('Categoria_idcategoria=1');
+		    		$this->render('productos_mujer',array('data'=>$model,'tipo'=>$tipo));
+				}
+				else if($tipo == 2)
+				{
+					$model=Productos::model()->findAll('Categoria_idcategoria=2');
+		    		$this->render('productos_hombre',array('data'=>$model,'tipo'=>$tipo));
+				}
+		    }
+		    Yii::app()->user->setFlash('error', 'Debe ingresar un valor en Cantidad');
+		}
+
     	if($tipo==0)
     	{
     		$model=Productos::model()->findAll();
-    		$this->render('detalle_producto',array('data'=>$this->loadModel($id),'dataProvider'=>$model,'tipo'=>$tipo));
+    		$this->render('detalle_producto',array('data'=>$this->loadModel($id),'dataProvider'=>$model,'tipo'=>$tipo, 'model_factura'=>$model_facturas));
     	}
     	else
     	{
     		$model=Productos::model()->findAll('Categoria_idcategoria='.$tipo);
-    		$this->render('detalle_producto',array('data'=>$this->loadModel($id),'dataProvider'=>$model,'tipo'=>$tipo));
+    		$this->render('detalle_producto',array('data'=>$this->loadModel($id),'dataProvider'=>$model,'tipo'=>$tipo, 'model_factura'=>$model_facturas));
     	}
     }
 
