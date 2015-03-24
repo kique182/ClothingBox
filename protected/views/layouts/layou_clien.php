@@ -54,7 +54,7 @@
                 ?>
             </div>
             <div class="botoncito">
-                <?php echo CHtml::link(CHtml::encode('Pagar'), array('detalle_producto',), array('class'=>'boton_peque')); ?>
+                <?php echo CHtml::link(CHtml::encode('Pagar'), array('/facturas/index',), array('class'=>'boton_peque')); ?>
             </div>
         </div>
         <div id="menu">
