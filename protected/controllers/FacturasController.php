@@ -6,7 +6,7 @@ class FacturasController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/layou_clien';
 
 	/**
 	 * @return array action filters
@@ -27,18 +27,11 @@ class FacturasController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+			array('allow',
+				'roles'=>array('Cliente'),
 				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
+				),
+
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -113,8 +106,8 @@ class FacturasController extends Controller
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		$model=Facturas::model()->findAll('Usuarios_username="'.Yii::app()->user->id.'"');
+    	$this->render('_view',array('data'=>$model,));
 	}
 
 	/**
@@ -122,10 +115,12 @@ class FacturasController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Facturas');
+		/*$dataProvider=new CActiveDataProvider('Facturas');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));
+		));*/
+		$model=Facturas::model()->findAll('Usuarios_username="'.Yii::app()->user->id.'"');
+    	$this->render('_view',array('data'=>$model,));
 	}
 
 	/**

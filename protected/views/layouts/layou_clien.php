@@ -60,11 +60,11 @@
         <div id="menu">
         <?php $this->widget('zii.widgets.CMenu',array(
                 'items'=>array(
-                        array('label'=>'Inicio', 'url'=>array('index')),
-                        array('label'=>'Productos', 'url'=>array('productos', 'tipo'=>'0'),
+                        array('label'=>'Inicio', 'url'=>array('clientes/index')),
+                        array('label'=>'Productos', 'url'=>array('clientes/productos', 'tipo'=>'0'),
                             'items' => array(
-                            array('label' => 'Mujer', 'url' => array('productos', 'tipo'=>'1')),
-                            array('label' => 'Hombre', 'url' => array('productos', 'tipo'=>'2')))),
+                            array('label' => 'Mujer', 'url' => array('clientes/productos', 'tipo'=>'1')),
+                            array('label' => 'Hombre', 'url' => array('clientes/productos', 'tipo'=>'2')))),
                         array('label'=>'Contácto', 'url'=>array('#')),
                         array('label'=>Yii::app()->user->name, 'url'=>array('#'), 
                             'items' => array(

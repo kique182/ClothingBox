@@ -5,18 +5,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+foreach($data as $row)
+{
 ?>
 
 <div id="usuario_uno">  
     <div class="foto">
-        <?php echo CHtml::link(CHtml::image(Yii::app()->request->baseUrl.'/images/fotos_productos/'.$data->foto,"foto",array("width"=>190, "height"=>150)), array('detalle_producto','id'=>$data->idproducto,'tipo'=>$tipo)); ?>
+        <?php echo CHtml::link(CHtml::image(Yii::app()->request->baseUrl.'/images/fotos_productos/'.$row->foto,"foto",array("width"=>190, "height"=>150)), array('detalle_producto','id'=>$row->idproducto,'tipo'=>$tipo)); ?>
     </div>
     <div class="nombre">
         <h3>
-            <?php echo CHtml::encode($data->nombre); ?>
+            <?php echo CHtml::encode($row->nombre); ?>
         </h3>
     </div>  
     <div class="botones">            
-        <?php echo CHtml::link(CHtml::encode('Ver Detalle'), array('detalle_producto','id'=>$data->idproducto,'tipo'=>$tipo), array('class'=>'boton_peque')); ?>
+        <?php echo CHtml::link(CHtml::encode('Ver Detalle'), array('detalle_producto','id'=>$row->idproducto,'tipo'=>$tipo), array('class'=>'boton_peque')); ?>
     </div>
 </div>
+<?php
+}
+?>

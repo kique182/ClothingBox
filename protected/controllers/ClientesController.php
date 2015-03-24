@@ -48,7 +48,7 @@ class ClientesController extends Controller
 		}
 		else if($tipo == 1)
 		{
-			$model=Productos::model()->find('Categoria_idcategoria=1');
+			$model=Productos::model()->findAll('Categoria_idcategoria=1');
     		$this->render('productos_mujer',array('data'=>$model,'tipo'=>$tipo));
 		}
 		else if($tipo == 2)
@@ -74,7 +74,7 @@ class ClientesController extends Controller
 				}
 				else if($tipo == 1)
 				{
-					$model=Productos::model()->find('Categoria_idcategoria=1');
+					$model=Productos::model()->findAll('Categoria_idcategoria=1');
 		    		$this->render('productos_mujer',array('data'=>$model,'tipo'=>$tipo));
 				}
 				else if($tipo == 2)
