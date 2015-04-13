@@ -138,4 +138,10 @@ class ClientesController extends Controller
 		));
     }
 
+    public function actionFactura()
+    {
+    	$model=Facturas::model()->findAll('Usuarios_username="'.Yii::app()->user->id.'"');
+    	$this->render('factura',array('data'=>$model,));
+    }
+
 }

@@ -25,7 +25,7 @@ class LoginForm extends CFormModel
                         array(
                             'username',
                             'match',
-                            'pattern' => '/^[a-z]+$/i',
+                            'pattern' => '/^[a-zA-Z0-9]+$/i',
                             'message' => 'solo letras'
                         ),
                     

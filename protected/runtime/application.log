@@ -15054,3 +15054,25 @@ Stack trace:
 REQUEST_URI=/yii/ClothingBox/index.php/facturas/delete/31
 HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/facturas/delete/29
 ---
+2015/04/13 12:12:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "perfil" solicitada.' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('perfil')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('perfil')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('facturas/perfil')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/facturas/perfil
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/facturas/delete/40
+---
+2015/04/13 13:29:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "factura" solicitada.' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('factura')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('factura')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/factur...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/factura
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/clientes/index
+---
