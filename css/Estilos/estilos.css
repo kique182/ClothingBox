@@ -373,3 +373,39 @@ filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', end
 
 }
 
+.factura_cliente
+{
+    width: 97%;
+    position: relative;
+}
+
+.factura_cliente .item
+{
+    padding: 20px;
+    margin-top: 20px;
+    float: left;
+    width: 100%;
+    border: 1px solid blue;
+}
+
+.factura_cliente .botones_item
+{
+    float: right;
+    width: 20%;
+}
+
+.factura_cliente .pie
+{
+    padding: 20px;
+    margin-top: 20px;
+    float: left;
+    width: 100%;
+    border: 1px solid blue;
+}
+
+.factura_cliente .botones_pie
+{
+    float: right;
+    width: 80%;
+}
+

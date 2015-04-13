@@ -39,22 +39,18 @@
             <?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/Imagenes/carrito.png');?>
             <div class="cantidad">
                 <?php 
-                    /*$precio = 0;
-                    $i = 1;
-                    
-                    foreach ($canti as $can) 
-                    {
-                        $preci = Yii::app()->db->createCommand()->select('precio')->from('Productos')->where('idproducto=:id', array(':id'=>$can['Productos_id_producto']))->queryScalar();
-                        $precio = $preci + $precio;
-                    }
-                    */
                     $canti = Yii::app()->db->createCommand()->select('*')->from('Facturas')->where('Usuarios_username=:username', array(':username'=>Yii::app()->user->id))->queryAll();
                     $cantidad = count($canti);
                     echo $cantidad;
                 ?>
             </div>
             <div class="botoncito">
-                <?php echo CHtml::link(CHtml::encode('Pagar'), array('clientes/factura',), array('class'=>'boton_peque')); ?>
+                <?php 
+                    if($cantidad == 0)
+                        echo CHtml::link(CHtml::encode('Pagar'), array('clientes/factura'), array('class'=>'boton_peque', 'onclick'=>'return false'));
+                    else
+                        echo CHtml::link(CHtml::encode('Pagar'), array('clientes/factura'), array('class'=>'boton_peque'));
+                ?>
             </div>
         </div>
         <div id="menu">

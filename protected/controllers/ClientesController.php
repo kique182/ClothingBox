@@ -144,4 +144,37 @@ class ClientesController extends Controller
     	$this->render('factura',array('data'=>$model,));
     }
 
+    public function actionDelete($id)
+	{
+		$this->loadModelFactura($id)->delete();
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		$model=Facturas::model()->findAll('Usuarios_username="'.Yii::app()->user->id.'"');
+		if($model == null)
+			$this->render('index');
+		else
+			$this->render('factura',array('data'=>$model,));
+	}
+
+	public function loadModelFactura($id)
+	{
+		$model=Facturas::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
+
+	public function actionVaciar()
+	{
+		$sql = 'DELETE FROM Facturas WHERE Usuarios_username="'.Yii::app()->user->id.'"';
+		$comando = Yii::app() -> db -> createCommand($sql);
+		$comando -> execute();
+		$this->render('index');
+	}
+
+	public function actionSeleccionar_metodos()
+	{
+		$model = new Pedido;
+		$this->render('seleccionar_metodos', array('model'=>$model));
+	}
 }
