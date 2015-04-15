@@ -50,6 +50,20 @@
     height: 35px;
 }
 
+.numero
+{
+    float: top;
+    width: 200px;
+    height: 35px;
+}
+
+.direccion_envio
+{
+    float: top;
+    width: 425px;
+    height: 35px;
+}
+
 .fecha
 {
     float: right;

@@ -13,9 +13,12 @@
  * @property integer $Usuario_idusuario
  * @property integer $metodoenvio_idmetodoenvio
  * @property integer $metodopago_idmetodopago
+ * @property integer $Bancos_id_banco
+ * @property integer $numero_trans
  *
  * The followings are the available model relations:
  * @property HistorialCompras[] $historialComprases
+ * @property Bancos $bancosIdBanco
  * @property Metodoenvio $metodoenvioIdmetodoenvio
  * @property Metodopago $metodopagoIdmetodopago
  * @property Usuarios $usuarioIdusuario
@@ -40,12 +43,12 @@ class Pedido extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('numero_pedido, fecha, cantidad, direccion, Usuario_idusuario, metodoenvio_idmetodoenvio, metodopago_idmetodopago', 'required'),
-			array('numero_pedido, cantidad, Usuario_idusuario, metodoenvio_idmetodoenvio, metodopago_idmetodopago', 'numerical', 'integerOnly'=>true),
+			array('fecha, cantidad, direccion, Usuario_idusuario, metodoenvio_idmetodoenvio, metodopago_idmetodopago, Bancos_id_banco, numero_trans', 'required'),
+			array('cantidad, Usuario_idusuario, metodoenvio_idmetodoenvio, metodopago_idmetodopago, Bancos_id_banco, numero_trans', 'numerical', 'integerOnly'=>true),
 			array('direccion, status', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('idpedido, numero_pedido, fecha, cantidad, direccion, status, Usuario_idusuario, metodoenvio_idmetodoenvio, metodopago_idmetodopago', 'safe', 'on'=>'search'),
+			array('idpedido, fecha, cantidad, direccion, status, Usuario_idusuario, metodoenvio_idmetodoenvio, metodopago_idmetodopago, Bancos_id_banco, numero_trans', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,6 +61,7 @@ class Pedido extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'historialComprases' => array(self::HAS_MANY, 'HistorialCompras', 'Pedido_idpedido'),
+			'bancosIdBanco' => array(self::BELONGS_TO, 'Bancos', 'Bancos_id_banco'),
 			'metodoenvioIdmetodoenvio' => array(self::BELONGS_TO, 'Metodoenvio', 'metodoenvio_idmetodoenvio'),
 			'metodopagoIdmetodopago' => array(self::BELONGS_TO, 'Metodopago', 'metodopago_idmetodopago'),
 			'usuarioIdusuario' => array(self::BELONGS_TO, 'Usuarios', 'Usuario_idusuario'),
@@ -73,7 +77,6 @@ class Pedido extends CActiveRecord
 	{
 		return array(
 			'idpedido' => 'Idpedido',
-			'numero_pedido' => 'Numero Pedido',
 			'fecha' => 'Fecha',
 			'cantidad' => 'Cantidad',
 			'direccion' => 'Direccion',
@@ -81,6 +84,8 @@ class Pedido extends CActiveRecord
 			'Usuario_idusuario' => 'Usuario Idusuario',
 			'metodoenvio_idmetodoenvio' => 'Metodoenvio Idmetodoenvio',
 			'metodopago_idmetodopago' => 'Metodopago Idmetodopago',
+			'Bancos_id_banco' => 'Bancos Id Banco',
+			'numero_trans' => 'Numero Trans',
 		);
 	}
 
@@ -103,7 +108,6 @@ class Pedido extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('idpedido',$this->idpedido);
-		$criteria->compare('numero_pedido',$this->numero_pedido);
 		$criteria->compare('fecha',$this->fecha,true);
 		$criteria->compare('cantidad',$this->cantidad);
 		$criteria->compare('direccion',$this->direccion,true);
@@ -111,6 +115,8 @@ class Pedido extends CActiveRecord
 		$criteria->compare('Usuario_idusuario',$this->Usuario_idusuario);
 		$criteria->compare('metodoenvio_idmetodoenvio',$this->metodoenvio_idmetodoenvio);
 		$criteria->compare('metodopago_idmetodopago',$this->metodopago_idmetodopago);
+		$criteria->compare('Bancos_id_banco',$this->Bancos_id_banco);
+		$criteria->compare('numero_trans',$this->numero_trans);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

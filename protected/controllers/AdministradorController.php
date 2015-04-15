@@ -48,4 +48,15 @@ class AdministradorController extends Controller
     		$this->render('metodo_pago');
     }
     
+    public function actionPedidos()
+    {
+        $model=Pedido::model()->findAll('status="en espera"');
+        $this->render('pedidos',array('data'=>$model,));
+    }
+
+    public function actionDetalle_pedido($id)
+    {
+        $model=ProductoPedido::model()->findAll('Pedido_idpedido='.$id);
+        $this->render('detalle_pedido',array('data'=>$model,));
+    }
 }

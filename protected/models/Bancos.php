@@ -1,27 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "producto_pedido".
+ * This is the model class for table "bancos".
  *
- * The followings are the available columns in table 'producto_pedido':
- * @property integer $idProducto_Pedido
- * @property string $Precio_Compra
- * @property integer $Pedido_idpedido
- * @property integer $Producto_idproducto
- * @property integer $cantidad_producto
+ * The followings are the available columns in table 'bancos':
+ * @property integer $id_banco
+ * @property string $nombre
+ * @property string $descripcion
  *
  * The followings are the available model relations:
- * @property Pedido $pedidoIdpedido
- * @property Productos $productoIdproducto
+ * @property Pedido[] $pedidos
  */
-class ProductoPedido extends CActiveRecord
+class Bancos extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'producto_pedido';
+		return 'bancos';
 	}
 
 	/**
@@ -32,12 +29,12 @@ class ProductoPedido extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('Precio_Compra, Pedido_idpedido, Producto_idproducto, cantidad_producto', 'required'),
-			array('Pedido_idpedido, Producto_idproducto, cantidad_producto', 'numerical', 'integerOnly'=>true),
-			array('Precio_Compra', 'length', 'max'=>6),
+			array('nombre, descripcion', 'required'),
+			array('nombre', 'length', 'max'=>50),
+			array('descripcion', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('idProducto_Pedido, Precio_Compra, Pedido_idpedido, Producto_idproducto, cantidad_producto', 'safe', 'on'=>'search'),
+			array('id_banco, nombre, descripcion', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -49,8 +46,7 @@ class ProductoPedido extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'pedidoIdpedido' => array(self::BELONGS_TO, 'Pedido', 'Pedido_idpedido'),
-			'productoIdproducto' => array(self::BELONGS_TO, 'Productos', 'Producto_idproducto'),
+			'pedidos' => array(self::HAS_MANY, 'Pedido', 'Bancos_id_banco'),
 		);
 	}
 
@@ -60,11 +56,9 @@ class ProductoPedido extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'idProducto_Pedido' => 'Id Producto Pedido',
-			'Precio_Compra' => 'Precio Compra',
-			'Pedido_idpedido' => 'Pedido Idpedido',
-			'Producto_idproducto' => 'Producto Idproducto',
-			'cantidad_producto' => 'Cantidad Producto',
+			'id_banco' => 'Id Banco',
+			'nombre' => 'Nombre',
+			'descripcion' => 'Descripcion',
 		);
 	}
 
@@ -86,11 +80,9 @@ class ProductoPedido extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('idProducto_Pedido',$this->idProducto_Pedido);
-		$criteria->compare('Precio_Compra',$this->Precio_Compra,true);
-		$criteria->compare('Pedido_idpedido',$this->Pedido_idpedido);
-		$criteria->compare('Producto_idproducto',$this->Producto_idproducto);
-		$criteria->compare('cantidad_producto',$this->cantidad_producto);
+		$criteria->compare('id_banco',$this->id_banco);
+		$criteria->compare('nombre',$this->nombre,true);
+		$criteria->compare('descripcion',$this->descripcion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -101,7 +93,7 @@ class ProductoPedido extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return ProductoPedido the static model class
+	 * @return Bancos the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

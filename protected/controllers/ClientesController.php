@@ -175,6 +175,68 @@ class ClientesController extends Controller
 	public function actionSeleccionar_metodos()
 	{
 		$model = new Pedido;
+
+		if(isset($_POST['Pedido']))
+		{
+			$model->attributes=$_POST['Pedido'];
+			$model->status = 'en espera';
+			$model->Usuario_idusuario = $this->cargarId();
+			$model->cantidad = $_SESSION['Cantidad_Productos'];
+			$model->fecha = new CDbExpression('NOW()');
+			if($model->save())
+			{
+				
+				//Guardar en la tabla ProductoPedido//
+				$consulta=Facturas::model()->findAll('Usuarios_username="'.Yii::app()->user->id.'"');
+				foreach ($consulta as $value)
+				{
+					$model_pp = new ProductoPedido;
+					$model_pp->Precio_Compra = $this->cargarPrecio($value->Productos_id_producto);
+					$model_pp->Pedido_idpedido = $model->idpedido;
+					$model_pp->Producto_idproducto = $value->Productos_id_producto;
+					$model_pp->cantidad_producto = $value->cantidad;
+					if($model_pp->save())
+					{
+						Yii::app()->user->setFlash('success', 'Pedido Realizado con Exito.');
+					}
+				}
+				$this->actionVaciar();
+			}
+			Yii::app()->user->setFlash('error', CHtml::errorSummary($model));	
+		}
+
 		$this->render('seleccionar_metodos', array('model'=>$model));
+	}
+
+	public function cargarId()
+	{
+		$sql = 'Select idusuario FROM Usuarios WHERE username="'.Yii::app()->user->id.'"';
+		$comando = Yii::app() -> db;
+		$comand = $comando -> createCommand($sql);
+		$dataReader = $comand->queryScalar();
+		return $dataReader;
+
+	}
+
+	public function cargarPrecio($id)
+	{
+		$sql = 'Select precio FROM Productos WHERE idproducto='.$id;
+		$comando = Yii::app() -> db;
+		$comand = $comando -> createCommand($sql);
+		$dataReader = $comand->queryScalar();
+		return $dataReader;
+	}
+
+	public function actionPedidos()
+	{
+		$idusuario = $this->cargarId();
+		$model=Pedido::model()->findAll('Usuario_idusuario='.$idusuario);
+    	$this->render('pedidos',array('data'=>$model,));
+	}
+
+	public function actionDetalle_pedido($id)
+	{
+		$model=ProductoPedido::model()->findAll('Pedido_idpedido='.$id);
+		$this->render('detalle_pedido',array('data'=>$model,));
 	}
 }

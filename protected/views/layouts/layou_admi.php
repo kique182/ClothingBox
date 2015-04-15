@@ -35,7 +35,7 @@
                             'items' => array(
                             array('label' => 'Administrar Categorias', 'url' => array('/categorias/index')),
                             array('label' => 'Administrar Productos', 'url' => array('/productos/index')),
-                            array('label' => 'Pedidos', 'url' => array('/pedidos/index')))),
+                            array('label' => 'Pedidos', 'url' => array('administrador/pedidos')))),
                         array('label'=>'Métodos', 'url'=>array('#'),
                             'items' => array(
                             array('label' => 'Métodos de Envio', 'url' => array('/metodoenvio/index')),

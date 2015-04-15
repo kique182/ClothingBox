@@ -2,12 +2,14 @@
 /* @var $this FacturasController */
 /* @var $data Facturas */
 	$_SESSION['TOTAL'] = 0;
+	$_SESSION['Cantidad_Productos'] = 0;
 ?>
 <div class="factura_cliente">
 <?php
 foreach($data as $row)
 {
 	$_SESSION['TOTAL'] = ($row->cantidad*$row->productosIdProducto->precio) + $_SESSION['TOTAL'];
+	$_SESSION['Cantidad_Productos'] = ($row->cantidad + $_SESSION['Cantidad_Productos']);
 ?>
 	<div class="item">
 

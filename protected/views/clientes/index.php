@@ -1,3 +1,18 @@
+<div class='info' style='text-align:center;'>
+            <?php
+                $flashMessages = Yii::app()->user->getFlashes();
+                if($flashMessages)
+                {
+                    echo '<ul class="flashes">';
+                    foreach ($flashMessages as $key => $message)
+                    {
+                        echo '<li><div class="flash-' . $key . '">' . $message . "</div></li>";
+                    }
+                    echo '</ul>';                
+                }
+            ?>
+        </div>
+
 <div class="main">
 <div class="consigna"
 <a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/js/images/frase.png" alt="img12"></a></div>
