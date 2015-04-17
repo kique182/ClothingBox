@@ -161,22 +161,22 @@ class ClientesController extends Controller
 
     public function actionDelete($id)
 	{
+		$total = 0;
 		$model=$this->loadModelFactura($id);	
 
-		$sql = 'Select cantidad FROM Facturas WHERE Productos_id_producto='.$model->Productos_id_producto;
+		$sql = 'SELECT cantidad FROM Facturas WHERE Productos_id_producto='.$model->Productos_id_producto.' AND Usuarios_username="'.Yii::app()->user->id.'"';
 		$comando = Yii::app() -> db;
 		$comand = $comando -> createCommand($sql);
 		$cantidad_factura = $comand->queryScalar();
 
-		$sql = 'Select cantidad FROM Productos WHERE idproducto='.$model->Productos_id_producto;
-		$comando = Yii::app() -> db;
-		$comand = $comando -> createCommand($sql);
-		$cantidad_inventario = $comand->queryScalar();
+		$sql2 = 'SELECT cantidad FROM Productos WHERE idproducto='.$model->Productos_id_producto;
+		$comando = Yii::app() -> db -> createCommand($sql2);
+		$cantidad_inventario = $comando->queryScalar();
 		
 		$total = $cantidad_inventario + $cantidad_factura;
 
-		$sql = 'UPDATE Productos SET cantidad = '.$total.' WHERE idproducto = '.$model->Productos_id_producto;
-		$comando = Yii::app() -> db -> createCommand($sql);
+		$sql3 = 'UPDATE Productos SET cantidad = '.$total.' WHERE idproducto = '.$model->Productos_id_producto;
+		$comando = Yii::app() -> db -> createCommand($sql3);
 		$comando -> execute();
 		
 		$this->loadModelFactura($id)->delete();
@@ -199,9 +199,30 @@ class ClientesController extends Controller
 
 	public function actionVaciar()
 	{
-		$sql = 'DELETE FROM Facturas WHERE Usuarios_username="'.Yii::app()->user->id.'"';
-		$comando = Yii::app() -> db -> createCommand($sql);
-		$comando -> execute();
+		$model=Facturas::model()->findAll('Usuarios_username="'.Yii::app()->user->id.'"');
+
+		foreach ($model as $data) 
+		{
+			$total = 0;
+
+			$sql = 'SELECT cantidad FROM Facturas WHERE Productos_id_producto='.$data->Productos_id_producto.' AND Usuarios_username="'.Yii::app()->user->id.'"';
+			$comando = Yii::app() -> db;
+			$comand = $comando -> createCommand($sql);
+			$cantidad_factura = $comand->queryScalar();
+
+			$sql2 = 'SELECT cantidad FROM Productos WHERE idproducto='.$data->Productos_id_producto;
+			$comando = Yii::app() -> db -> createCommand($sql2);
+			$cantidad_inventario = $comando->queryScalar();
+			
+			$total = $cantidad_inventario + $cantidad_factura;
+
+			$sql3 = 'UPDATE Productos SET cantidad = '.$total.' WHERE idproducto = '.$data->Productos_id_producto;
+			$comando = Yii::app() -> db -> createCommand($sql3);
+			$comando -> execute();
+			
+			$this->loadModelFactura($data->id_factura)->delete();
+		}
+
 		$this->render('index');
 	}
 

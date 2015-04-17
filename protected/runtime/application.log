@@ -18581,3 +18581,47 @@ Stack trace:
 REQUEST_URI=/yii/ClothingBox/index.php/administrador/pedidos
 HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/administrador/index
 ---
+2015/04/17 12:58:06 [error] [php] Undefined variable: id (C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php:223)
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ClientesController->runAction()
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ClientesController->filterAccessControl()
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(265): ClientesController->runActionWithFilters()
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(282): ClientesController->run()
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\yii\ClothingBox\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/vaciar
+in C:\wamp\www\yii\ClothingBox\protected\controllers\ClientesController.php (223)
+in C:\wamp\www\yii\ClothingBox\index.php (13)
+2015/04/17 13:26:41 [warning] [application] Error al establecer unsafe al atributo "cantidad" de "Productos".
+in C:\wamp\www\yii\ClothingBox\protected\controllers\ProductosController.php (102)
+in C:\wamp\www\yii\ClothingBox\index.php (13)
+2015/04/17 13:26:48 [warning] [application] Error al establecer unsafe al atributo "cantidad" de "Productos".
+in C:\wamp\www\yii\ClothingBox\protected\controllers\ProductosController.php (102)
+in C:\wamp\www\yii\ClothingBox\index.php (13)
+2015/04/17 17:37:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "politicas.php" solicitada.' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('politicas.php')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('politicas.php')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/politi...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/politicas.php
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/clientes/
+---
+2015/04/17 17:37:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "politicas.php" solicitada.' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('politicas.php')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('politicas.php')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/politi...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\ClothingBox\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/ClothingBox/index.php/clientes/politicas.php
+HTTP_REFERER=http://localhost/yii/ClothingBox/index.php/clientes/
+---

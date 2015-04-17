@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 17-04-2015 a las 16:56:02
+-- Tiempo de generación: 17-04-2015 a las 23:02:44
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -40,11 +40,13 @@ CREATE TABLE IF NOT EXISTS `auth_asignacion` (
 
 INSERT INTO `auth_asignacion` (`itemname`, `userid`, `bizrule`, `data`) VALUES
 ('Administrador', 'javio', NULL, 'N;'),
+('Cliente', 'cbernal', NULL, 'N;'),
 ('Cliente', 'enedina', NULL, 'N;'),
 ('Cliente', 'fer', NULL, 'N;'),
 ('Cliente', 'gerardo', NULL, 'N;'),
 ('Cliente', 'maduro', NULL, 'N;'),
 ('Cliente', 'majo', NULL, NULL),
+('Cliente', 'mbernal', NULL, 'N;'),
 ('Usuario', 'pepe123', NULL, 'N;');
 
 -- --------------------------------------------------------
@@ -161,16 +163,14 @@ CREATE TABLE IF NOT EXISTS `facturas` (
   PRIMARY KEY (`id_factura`),
   KEY `Productos_id_producto` (`Productos_id_producto`),
   KEY `Usuarios_username` (`Usuarios_username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
 
 --
 -- Volcado de datos para la tabla `facturas`
 --
 
 INSERT INTO `facturas` (`id_factura`, `Usuarios_username`, `Productos_id_producto`, `cantidad`) VALUES
-(41, 'maduro', 2, 3),
-(42, 'fer', 3, 5),
-(43, 'fer', 2, 43);
+(41, 'maduro', 2, 3);
 
 -- --------------------------------------------------------
 
@@ -285,18 +285,19 @@ CREATE TABLE IF NOT EXISTS `pedido` (
   KEY `fk_Pedido_metodopago1_idx` (`metodopago_idmetodopago`),
   KEY `Bancos_id_banco` (`Bancos_id_banco`),
   KEY `status` (`status`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 --
 -- Volcado de datos para la tabla `pedido`
 --
 
 INSERT INTO `pedido` (`idpedido`, `fecha`, `cantidad`, `direccion`, `status`, `Usuario_idusuario`, `metodoenvio_idmetodoenvio`, `metodopago_idmetodopago`, `Bancos_id_banco`, `numero_trans`) VALUES
-(16, '2015-04-14', 10, 'djdjdfjjdfhssgdshfn', 3, 54, 1, 1, 1, 45436),
-(19, '2015-04-14', 12, 'sdbdsfkhgshcn ,n ljsabf', 2, 55, 2, 1, 1, 2147483647),
+(16, '2015-04-14', 10, 'djdjdfjjdfhssgdshfn', 4, 54, 1, 1, 1, 45436),
+(19, '2015-04-14', 12, 'sdbdsfkhgshcn ,n ljsabf', 3, 55, 2, 1, 1, 2147483647),
 (20, '2015-04-14', 5, 'hdrhrdshrehre', 3, 55, 1, 1, 1, 346436),
 (21, '2015-04-16', 10, 'La Casa mia DE YO', 1, 54, 2, 2, 2, 34567),
-(22, '2015-04-16', 4, 'La Casa mia', 2, 54, 1, 1, 1, 323424);
+(22, '2015-04-16', 4, 'La Casa mia', 2, 54, 1, 1, 1, 323424),
+(23, '2015-04-17', 6, 'aaaaaaaaaaaa', 1, 60, 1, 2, 1, 111);
 
 -- --------------------------------------------------------
 
@@ -323,9 +324,9 @@ CREATE TABLE IF NOT EXISTS `productos` (
 --
 
 INSERT INTO `productos` (`idproducto`, `nombre`, `descripcion`, `precio`, `Categoria_idcategoria`, `Inventarios_idInventario`, `foto`, `cantidad`) VALUES
-(1, 'Chemisse', 'Algodon puro importado', 300, 2, 1, 'chemise.jpg', 21),
-(2, 'Zapatos bonitos', 'los mas comodos del mercado', 12000, 1, 2, 'zapatos.jpg', 40),
-(3, 'Swaeter', 'Se usa cuando hace frio o vas en moto', 2800, 1, 3, 'swaeter.jpg', 35);
+(1, 'Chemisse', 'Algodon puro importado', 1300, 2, 1, 'chemise.jpg', 50),
+(2, 'Zapatos bonitos', 'los mas comodos del mercado', 12000, 1, 2, 'zapatos.jpg', 50),
+(3, 'Swaeter', 'Se usa cuando hace frio o vas en moto', 2800, 1, 3, 'swaeter.jpg', 30);
 
 -- --------------------------------------------------------
 
@@ -342,7 +343,7 @@ CREATE TABLE IF NOT EXISTS `producto_pedido` (
   PRIMARY KEY (`idProducto_Pedido`),
   KEY `fk_Producto_Pedido_Pedido1_idx` (`Pedido_idpedido`),
   KEY `fk_Producto_Pedido_Producto1_idx` (`Producto_idproducto`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Volcado de datos para la tabla `producto_pedido`
@@ -357,7 +358,9 @@ INSERT INTO `producto_pedido` (`idProducto_Pedido`, `Precio_Compra`, `Pedido_idp
 (10, '12000', 21, 2, 3),
 (11, '2800', 21, 3, 3),
 (12, '300', 21, 1, 4),
-(13, '300', 22, 1, 4);
+(13, '300', 22, 1, 4),
+(14, '1300', 23, 1, 2),
+(15, '1300', 23, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -469,7 +472,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   KEY `fk_Usuario_Rol_idx` (`Rol_idrol`),
   KEY `Sexo_idsexo` (`Sexo_idsexo`),
   KEY `username` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=59 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=61 ;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -487,7 +490,9 @@ INSERT INTO `usuarios` (`idusuario`, `nombre`, `apellido`, `cedula`, `direccion`
 (55, 'Gerardo', 'Moreno Ramirez', '4205369', 'La Florida parte alta', '02773117750', '1943-04-23', 'gerardomoreno@gmail.com', 'gerardo', '827ccb0eea8a706c4c34a16891f84e7b', 2, 1, 2, '2015-02-24', 'silueta_hom.png'),
 (56, 'Maduro', 'Maduro', '123456', 'La Casa', '04345456789', '1995-02-08', 'maduro@gmail.com', 'maduro', '827ccb0eea8a706c4c34a16891f84e7b', 2, 1, 2, '2015-04-13', 'silueta_hom.jpg'),
 (57, 'Fernando', 'Fernandez', '123456', 'la casa de el', '78349492', '2015-04-06', 'fernando_18474747@gnail.com', 'fer', '202cb962ac59075b964b07152d234b70', 2, 2, 2, '2015-04-13', 'silueta_hom.jpg'),
-(58, 'PEDRO', 'LUIS', '123456', 'la casa de el', '04345456789', '2015-04-06', 'dddd@hhh.com', 'pepe123', '202cb962ac59075b964b07152d234b70', 3, 1, 2, '2015-04-13', 'silueta_hom.jpg');
+(58, 'PEDRO', 'LUIS', '123456', 'la casa de el', '04345456789', '2015-04-06', 'dddd@hhh.com', 'pepe123', '202cb962ac59075b964b07152d234b70', 3, 1, 2, '2015-04-13', 'silueta_hom.jpg'),
+(59, 'mary', 'bernal', '23456', 'asdfgg', '33333333333333333', '2015-04-16', 'mbernal@gmail.com', 'mbernal', '508df4cb2f4d8f80519256258cfb975f', 1, 1, 2, '2015-04-17', 'silueta_muj.png'),
+(60, 'cesar', 'bernal', '123456', 'asfg', '55555555', '2015-04-15', 'cbernal@unet.edu.ve', 'cbernal', 'fcea920f7412b5da7be0cf42b8c93759', 2, 1, 2, '2015-04-17', 'silueta_hom.jpg');
 
 --
 -- Restricciones para tablas volcadas

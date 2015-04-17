@@ -21,6 +21,25 @@ h1
     font-family: agency_fb;
 }
 
+h3
+{
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    font-size: 12pt;
+    margin: 15px 0px;
+    font-family: agency_fb;
+}
+
+h4
+{
+    text-align: left;
+    color: #fff;
+    font-weight: normal;
+    font-size: 12pt;
+    margin: 15px 0px;
+    font-family: agency_fb;
+}
 /* Cabecera*/
 header
 {
@@ -107,6 +126,23 @@ header
     width: 100%;
 }
 
+.campos_update
+{
+    height: 80px;
+    width: 100%; 
+}
+
+.campos_update .texto
+{
+    float: left;
+    width: 120px;
+    padding-left: 20px;
+}
+
+.campos_update .campo
+{
+    float: left;
+}
 
 #boton_lindo
 {    

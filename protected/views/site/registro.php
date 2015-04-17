@@ -33,6 +33,7 @@ $this->pageTitle=Yii::app()->name . ' - Registrarse';
             )); ?>
 
             <h1>Registrarse</h1>
+            <h3>Todos los Campos son Obligatorios</h3>
             <div class="campos_llenar">
                 <?php echo $form->textField($model,'nombre', array('class'=>'nombre', 'placeholder'=>'Ingrese su Nombre')); ?>
                 <?php echo $form->textField($model,'apellido' , array('class'=>'apellido', 'placeholder'=>'Ingrese su Apellido')); ?>
