@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 14-04-2015 a las 20:39:28
+-- Tiempo de generación: 17-04-2015 a las 16:56:02
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -45,7 +45,7 @@ INSERT INTO `auth_asignacion` (`itemname`, `userid`, `bizrule`, `data`) VALUES
 ('Cliente', 'gerardo', NULL, 'N;'),
 ('Cliente', 'maduro', NULL, 'N;'),
 ('Cliente', 'majo', NULL, NULL),
-('Cliente', 'pepe123', NULL, 'N;');
+('Usuario', 'pepe123', NULL, 'N;');
 
 -- --------------------------------------------------------
 
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `facturas` (
   PRIMARY KEY (`id_factura`),
   KEY `Productos_id_producto` (`Productos_id_producto`),
   KEY `Usuarios_username` (`Usuarios_username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=70 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
 
 --
 -- Volcado de datos para la tabla `facturas`
@@ -209,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `inventarios` (
   `idInventario` int(11) NOT NULL AUTO_INCREMENT,
   `cantidad` int(11) NOT NULL,
   PRIMARY KEY (`idInventario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Volcado de datos para la tabla `inventarios`
@@ -217,7 +217,8 @@ CREATE TABLE IF NOT EXISTS `inventarios` (
 
 INSERT INTO `inventarios` (`idInventario`, `cantidad`) VALUES
 (1, 30),
-(2, 50);
+(2, 50),
+(3, 40);
 
 -- --------------------------------------------------------
 
@@ -272,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `pedido` (
   `fecha` date NOT NULL,
   `cantidad` int(11) NOT NULL,
   `direccion` varchar(45) NOT NULL,
-  `status` varchar(45) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
   `Usuario_idusuario` int(11) NOT NULL,
   `metodoenvio_idmetodoenvio` int(11) NOT NULL,
   `metodopago_idmetodopago` int(11) NOT NULL,
@@ -282,17 +283,20 @@ CREATE TABLE IF NOT EXISTS `pedido` (
   KEY `fk_Pedido_Usuario1_idx` (`Usuario_idusuario`),
   KEY `fk_Pedido_metodoenvio1_idx` (`metodoenvio_idmetodoenvio`),
   KEY `fk_Pedido_metodopago1_idx` (`metodopago_idmetodopago`),
-  KEY `Bancos_id_banco` (`Bancos_id_banco`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+  KEY `Bancos_id_banco` (`Bancos_id_banco`),
+  KEY `status` (`status`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- Volcado de datos para la tabla `pedido`
 --
 
 INSERT INTO `pedido` (`idpedido`, `fecha`, `cantidad`, `direccion`, `status`, `Usuario_idusuario`, `metodoenvio_idmetodoenvio`, `metodopago_idmetodopago`, `Bancos_id_banco`, `numero_trans`) VALUES
-(16, '2015-04-14', 10, 'djdjdfjjdfhssgdshfn', 'en espera', 54, 1, 1, 1, 45436),
-(19, '2015-04-14', 12, 'sdbdsfkhgshcn ,n ljsabf', 'en espera', 55, 2, 1, 1, 2147483647),
-(20, '2015-04-14', 5, 'hdrhrdshrehre', 'en espera', 55, 1, 1, 1, 346436);
+(16, '2015-04-14', 10, 'djdjdfjjdfhssgdshfn', 3, 54, 1, 1, 1, 45436),
+(19, '2015-04-14', 12, 'sdbdsfkhgshcn ,n ljsabf', 2, 55, 2, 1, 1, 2147483647),
+(20, '2015-04-14', 5, 'hdrhrdshrehre', 3, 55, 1, 1, 1, 346436),
+(21, '2015-04-16', 10, 'La Casa mia DE YO', 1, 54, 2, 2, 2, 34567),
+(22, '2015-04-16', 4, 'La Casa mia', 2, 54, 1, 1, 1, 323424);
 
 -- --------------------------------------------------------
 
@@ -308,6 +312,7 @@ CREATE TABLE IF NOT EXISTS `productos` (
   `Categoria_idcategoria` int(11) NOT NULL,
   `Inventarios_idInventario` int(11) NOT NULL,
   `foto` varchar(50) NOT NULL,
+  `cantidad` int(11) NOT NULL,
   PRIMARY KEY (`idproducto`),
   KEY `fk_Producto_Categoria1_idx` (`Categoria_idcategoria`),
   KEY `Inventario_idinventario` (`Inventarios_idInventario`)
@@ -317,10 +322,10 @@ CREATE TABLE IF NOT EXISTS `productos` (
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`idproducto`, `nombre`, `descripcion`, `precio`, `Categoria_idcategoria`, `Inventarios_idInventario`, `foto`) VALUES
-(1, 'Chemisse', 'Algodon puro importado', 300, 2, 1, 'chemise.jpg'),
-(2, 'Zapatos bonitos', 'los mas comodos del mercado', 12000, 1, 2, 'zapatos.jpg'),
-(3, 'Swaeter', 'Se usa cuando hace frio o vas en moto', 2800, 1, 1, 'swaeter.jpg');
+INSERT INTO `productos` (`idproducto`, `nombre`, `descripcion`, `precio`, `Categoria_idcategoria`, `Inventarios_idInventario`, `foto`, `cantidad`) VALUES
+(1, 'Chemisse', 'Algodon puro importado', 300, 2, 1, 'chemise.jpg', 21),
+(2, 'Zapatos bonitos', 'los mas comodos del mercado', 12000, 1, 2, 'zapatos.jpg', 40),
+(3, 'Swaeter', 'Se usa cuando hace frio o vas en moto', 2800, 1, 3, 'swaeter.jpg', 35);
 
 -- --------------------------------------------------------
 
@@ -337,7 +342,7 @@ CREATE TABLE IF NOT EXISTS `producto_pedido` (
   PRIMARY KEY (`idProducto_Pedido`),
   KEY `fk_Producto_Pedido_Pedido1_idx` (`Pedido_idpedido`),
   KEY `fk_Producto_Pedido_Producto1_idx` (`Producto_idproducto`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Volcado de datos para la tabla `producto_pedido`
@@ -348,7 +353,11 @@ INSERT INTO `producto_pedido` (`idProducto_Pedido`, `Precio_Compra`, `Pedido_idp
 (2, '12000', 16, 2, 5),
 (7, '12000', 19, 2, 6),
 (8, '300', 19, 1, 6),
-(9, '300', 20, 1, 5);
+(9, '300', 20, 1, 5),
+(10, '12000', 21, 2, 3),
+(11, '2800', 21, 3, 3),
+(12, '300', 21, 1, 4),
+(13, '300', 22, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -410,6 +419,29 @@ INSERT INTO `sexos` (`id_sexo`, `nombre`, `descripcion`) VALUES
 (1, 'Femenino', 'Sexo de las Mujeres'),
 (2, 'Masculino', 'Sexo de los Hombres'),
 (3, 'Otro', 'Sexo de los otros');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `status`
+--
+
+CREATE TABLE IF NOT EXISTS `status` (
+  `id_status` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) NOT NULL,
+  `descripcion` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_status`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Volcado de datos para la tabla `status`
+--
+
+INSERT INTO `status` (`id_status`, `nombre`, `descripcion`) VALUES
+(1, 'En Espera', 'status del pedido inicial'),
+(2, 'En Preparación', 'status del pedido segundo'),
+(3, 'En Camino', 'status del pedido enviado'),
+(4, 'Entregado', 'status del pedido final');
 
 -- --------------------------------------------------------
 
@@ -494,7 +526,8 @@ ALTER TABLE `pedido`
   ADD CONSTRAINT `fk_Pedido_metodoenvio1` FOREIGN KEY (`metodoenvio_idmetodoenvio`) REFERENCES `metodoenvio` (`idmetodoenvio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Pedido_metodopago1` FOREIGN KEY (`metodopago_idmetodopago`) REFERENCES `metodopago` (`idmetodopago`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Pedido_Usuario1` FOREIGN KEY (`Usuario_idusuario`) REFERENCES `usuarios` (`idusuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`Bancos_id_banco`) REFERENCES `bancos` (`id_banco`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`Bancos_id_banco`) REFERENCES `bancos` (`id_banco`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `pedido_ibfk_2` FOREIGN KEY (`status`) REFERENCES `status` (`id_status`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `productos`
