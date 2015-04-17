@@ -135,7 +135,7 @@ class SiteController extends Controller
 				}
 				else if(Yii::app()->authManager->checkAccess('Usuario',Yii::app()->user->id))
 				{
-					$this->redirect(Yii::app()->user->returnUrl.'/usuarios/index');
+					$this->redirect(Yii::app()->user->returnUrl.'/encargado/index');
 				}
 			}
 			Yii::app()->user->setFlash('error', 'Usuario o Password Incorrecto.!!');	

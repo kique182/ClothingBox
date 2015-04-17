@@ -7,7 +7,7 @@
 	<h1>Usuarios</h1>
 	<ul>
 		<li>
-			<?php echo CHtml::button('Crear Usuario', array('class'=>'boton_peque', 'submit'=>array('usuarios/create'))) ; ?>
+			<?php echo CHtml::link(CHtml::encode('Crear Usuario'), array('create'), array('class'=>'boton_peque')); ?>
 		</li>
 	</ul>
 </div> 

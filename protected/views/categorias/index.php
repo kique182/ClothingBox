@@ -6,7 +6,7 @@
 <div id="lista_menu">
 	<ul>
 		<li>
-			<?php echo CHtml::button('Crear Categoria', array('class'=>'boton_peque', 'submit'=>array('productos/create'))) ; ?>
+			<?php echo CHtml::link(CHtml::encode('Crear Categoría'), array('create'), array('class'=>'boton_peque')); ?>
 		</li>
 	</ul>
 </div>

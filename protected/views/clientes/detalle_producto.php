@@ -2,7 +2,6 @@
 /* @var $this ProductosController */
 /* @var $data Productos */
 ?>
-
 <div class='info' style='text-align:center;'>
     <?php
         $flashMessages = Yii::app()->user->getFlashes();
@@ -42,6 +41,10 @@
 
 			<b><?php echo CHtml::encode($data->getAttributeLabel('precio')); ?>:</b>
 			<?php echo CHtml::encode($data->precio); ?>
+			<br />
+
+			<b><?php echo CHtml::encode('Disponibilidad'); ?>:</b>
+			<?php echo CHtml::encode($data->cantidad).' Unidades'; ?>
 			<br />
 			<b><?php echo CHtml::encode($data->getAttributeLabel('Categoria_idcategoria')); ?>:</b>
 			<?php echo CHtml::encode($data->categoriaIdcategoria->nombre); ?>

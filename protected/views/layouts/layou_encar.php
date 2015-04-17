@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/usuarios_admin.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_registro.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Estilos/estilo_menu_lateral.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/js/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/js/css/style.css" />
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/modernizr.custom.63321.js"></script>
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
@@ -32,19 +32,12 @@
         <div id="menu">
         <?php $this->widget('zii.widgets.CMenu',array(
                 'items'=>array(
-                        array('label'=>'Inicio', 'url'=>array('/administrador/index')),
+                        array('label'=>'Inicio', 'url'=>array('index')),
                         array('label'=>'Productos', 'url'=>array('#'),
                             'items' => array(
-                            array('label' => 'Administrar Categorias', 'url' => array('/categorias/index')),
-                            array('label' => 'Administrar Productos', 'url' => array('/productos/index')))),
-                        array('label'=>'Métodos', 'url'=>array('#'),
-                            'items' => array(
-                            array('label' => 'Métodos de Envio', 'url' => array('/metodoenvio/index')),
-                            array('label' => 'Métodos de Pago', 'url' => array('/metodopago/index')))),
-                        array('label'=>'Usuarios', 'url'=>array('#'),
-                            'items' => array(
-                            array('label' => 'Crear Usuario', 'url' => array('/usuarios/create')),
-                            array('label' => 'Listar Usuarios', 'url' => array('/usuarios/index')))),	
+                            array('label' => 'Producto Más Vendido', 'url' => array('mas_vendido')))),
+                        array('label'=>'Reclamos', 'url'=>array('#')),
+                        array('label'=>'Pedidos', 'url'=>array('pedidos')),
                         array('label'=>Yii::app()->user->name, 'url'=>array('#'), 
                             'items' => array(
                             array('label' => 'Salir', 'url'=>array('/site/logout'))),'visible'=>!Yii::app()->user->isGuest)

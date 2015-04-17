@@ -5,6 +5,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+?>
+<div id="lista_menu">
+    <h1>Productos</h1>
+</div> 
+<?php
 foreach($data as $row)
 {
 ?>

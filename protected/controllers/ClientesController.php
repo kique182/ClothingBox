@@ -65,25 +65,40 @@ class ClientesController extends Controller
 		if(isset($_POST['Facturas']))
 		{
 			$model_facturas->attributes=$_POST['Facturas'];
-			if($model_facturas->save())
+			$sql = 'Select cantidad FROM Productos WHERE idproducto='.$model_facturas->Productos_id_producto;
+			$comando = Yii::app() -> db;
+			$comand = $comando -> createCommand($sql);
+			$dataReader = $comand->queryScalar();
+			if($model_facturas->cantidad > $dataReader)
 			{
-				if($tipo == 0)
-		    	{
-			    	$dataProvider = new CActiveDataProvider('Productos');
-					$this->render('productos',array('dataProvider'=>$dataProvider));
-				}
-				else if($tipo == 1)
+				Yii::app()->user->setFlash('error', 'No Hay suficiente Inventario');
+			}
+			else
+			{
+				if($model_facturas->save())
 				{
-					$model=Productos::model()->findAll('Categoria_idcategoria=1');
-		    		$this->render('productos_mujer',array('data'=>$model,'tipo'=>$tipo));
-				}
-				else if($tipo == 2)
-				{
-					$model=Productos::model()->findAll('Categoria_idcategoria=2');
-		    		$this->render('productos_hombre',array('data'=>$model,'tipo'=>$tipo));
-				}
-		    }
-		    Yii::app()->user->setFlash('error', 'Debe ingresar un valor en Cantidad');
+					$resta = $dataReader - $model_facturas->cantidad;
+					$sql = 'UPDATE Productos SET cantidad = '.$resta.' WHERE idproducto = '.$model_facturas->Productos_id_producto;
+					$comando = Yii::app() -> db -> createCommand($sql);
+					$comando -> execute();
+					if($tipo == 0)
+			    	{
+				    	$dataProvider = new CActiveDataProvider('Productos');
+						$this->render('productos',array('dataProvider'=>$dataProvider));
+					}
+					else if($tipo == 1)
+					{
+						$model=Productos::model()->findAll('Categoria_idcategoria=1');
+			    		$this->render('productos_mujer',array('data'=>$model,'tipo'=>$tipo));
+					}
+					else if($tipo == 2)
+					{
+						$model=Productos::model()->findAll('Categoria_idcategoria=2');
+			    		$this->render('productos_hombre',array('data'=>$model,'tipo'=>$tipo));
+					}
+			    }
+			    Yii::app()->user->setFlash('error', 'Debe ingresar un valor en Cantidad');
+			}
 		}
 
     	if($tipo==0)
@@ -146,6 +161,24 @@ class ClientesController extends Controller
 
     public function actionDelete($id)
 	{
+		$model=$this->loadModelFactura($id);	
+
+		$sql = 'Select cantidad FROM Facturas WHERE Productos_id_producto='.$model->Productos_id_producto;
+		$comando = Yii::app() -> db;
+		$comand = $comando -> createCommand($sql);
+		$cantidad_factura = $comand->queryScalar();
+
+		$sql = 'Select cantidad FROM Productos WHERE idproducto='.$model->Productos_id_producto;
+		$comando = Yii::app() -> db;
+		$comand = $comando -> createCommand($sql);
+		$cantidad_inventario = $comand->queryScalar();
+		
+		$total = $cantidad_inventario + $cantidad_factura;
+
+		$sql = 'UPDATE Productos SET cantidad = '.$total.' WHERE idproducto = '.$model->Productos_id_producto;
+		$comando = Yii::app() -> db -> createCommand($sql);
+		$comando -> execute();
+		
 		$this->loadModelFactura($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
@@ -179,7 +212,7 @@ class ClientesController extends Controller
 		if(isset($_POST['Pedido']))
 		{
 			$model->attributes=$_POST['Pedido'];
-			$model->status = 'en espera';
+			$model->status = 1;
 			$model->Usuario_idusuario = $this->cargarId();
 			$model->cantidad = $_SESSION['Cantidad_Productos'];
 			$model->fecha = new CDbExpression('NOW()');

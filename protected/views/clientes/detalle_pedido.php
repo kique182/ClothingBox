@@ -4,6 +4,9 @@
 	$_SESSION['TOTAL'] = 0;
 ?>
 <div class="factura_cliente">
+	<div id="lista_menu">
+		<h1>Pedidos</h1>
+	</div>
 <?php
 foreach($data as $row)
 {
